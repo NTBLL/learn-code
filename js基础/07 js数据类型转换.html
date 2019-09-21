@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 1.其他类型转换数字类型
+    *   parseInt,parseFloat,Number进行数字转换
+    *
+    * 2.其他类型转换字符串类型
+    *   toString,String进行字符串转换
+    *
+    * 3.其他类型转换布尔类型
+    *   Boolean进行布尔类型转换
+    *
+    * */
+</script>
+<script>
+    console.log(parseInt("11"));
+    console.log(parseInt("11.1"));
+    console.log(parseInt("11b"));
+    console.log(parseInt("a11"));  // NaN
+    console.log(parseInt(true));    //NaN
+    console.log(parseInt(undefined))
+    console.log(parseFloat(null));
+    console.log(parseFloat("11"));
+    console.log(parseFloat("11.1"));
+    console.log(parseFloat("11b"));
+    console.log(parseFloat("a11"));
+    console.log(parseFloat(true));
+    console.log(parseFloat(undefined))
+    console.log(parseFloat(null));
+    console.log(Number("11"));
+    console.log(Number("11.1"));
+    console.log(Number("11b"));
+    console.log(Number("a11"));
+    console.log(Number(true));     //1
+    console.log(Number(undefined))
+    console.log(Number(null));  //0
+</script>
+<script>
+    console.log(String(undefined));
+</script>
+<script>
+    console.log(Boolean(10));
+    console.log(Boolean(0))
+    console.log(Boolean(-10));
+    console.log(Boolean("张三"));
+    console.log(Boolean(""));
+    console.log(Boolean(undefined));
+    console.log(Boolean(null));
+</script>
+</body>
+</html>

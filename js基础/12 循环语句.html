@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 循环：重复执行某件事
+    *
+    * 循环条件：循环结束条件，计数器
+    *
+    * */
+</script>
+
+<script>
+    //while循环-->求1-100的和
+    var i = 0;
+    var sum = 0;
+    while(i <= 100){
+        sum += i;
+        i++;
+    }
+    console.log(sum);
+
+    //do-while循环-->求6的阶乘
+    var j = 1;
+    var mul = 1;
+    do{
+        mul *= j;
+        j++
+    }while(j <= 6);
+    console.log(mul);
+
+
+    //for循环-->求1-100中偶数的和
+    var s = 0;
+    for(var i = 0; i <= 100; i++){
+        if(i % 2 == 0){
+            s += i;
+        }
+    }
+    console.log(s);
+
+</script>
+</body>
+</html>

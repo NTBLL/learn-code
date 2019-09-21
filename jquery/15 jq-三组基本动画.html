@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示" id="btn1" />
+<input type="button" value="隐藏" id="btn2" />
+<input type="button" value="滑下" id="btn3" />
+<input type="button" value="滑上" id="btn4" />
+<input type="button" value="切换" id="btn5" />
+<input type="button" value="淡入" id="btn6" />
+<input type="button" value="淡出" id="btn7" />
+<input type="button" value="切换" id="btn8" />
+<div id="box"></div>
+
+<script>
+    /*
+    *
+    * 三组基本动画：
+    *   show,hide 用于显示和隐藏，不建议加入参数
+    *   slideIn,slideOut,slideToggle
+    *   fadeIn,fadeOut,fadeToggle
+    *
+    * 案例：京东呼吸灯
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $("#btn1").click(function () {
+        $("#box").show(1000);
+    });
+    $("#btn2").click(function () {
+        $("#box").hide(1000);
+    });
+    $("#btn3").click(function () {
+        $("#box").slideDown("fast");
+    });
+    $("#btn4").click(function () {
+        $("#box").slideUp("slow");
+    });
+    $("#btn5").click(function () {
+        $("#box").slideToggle();
+    });
+    $("#btn6").click(function () {
+        $("#box").fadeIn("normal");
+    });
+    $("#btn7").click(function () {
+        $("#box").fadeOut("normal");
+    });
+    $("#btn8").click(function () {
+        $("#box").fadeToggle();
+    });
+</script>
+</body>
+</html>

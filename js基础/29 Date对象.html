@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * Date是用于操作日期和时间的对象，需要创建该实例对象
+    *
+    * 创建Date实例方式：
+    *   new Date(),new Date(stringDate),new Date(value),new Date(year,month,date,...)
+    *
+    * 常用方法：
+    *   getFullYear
+    *   getMonth
+    *   getDate
+    *   getHours
+    *   getMinutes
+    *   getSeconds
+    *   getDay
+    *   toString
+    *   toDateString,toTimeString
+    *   toLocaleDateString,toLocaleTimeString
+    *   valueOf,now,+new Date()
+    *
+    *
+    *
+    * */
+</script>
+<script>
+    console.log(new Date());
+
+    var dt = new Date();
+    console.log(dt.getFullYear());
+    console.log(dt.getMonth());
+    console.log(dt.getDate());
+    console.log(dt.getHours());
+    console.log(dt.getMinutes());
+    console.log(dt.getSeconds());
+    console.log(dt.getDay());
+    console.log(dt.toString());
+    console.log(dt.toDateString());
+    console.log(dt.toTimeString());
+    console.log(dt.toLocaleDateString());
+    console.log(dt.toLocaleTimeString());
+    console.log(Date.now());
+    console.log(dt.valueOf());
+    console.log(+new Date());
+</script>
+<script src="js/common.js"></script>
+<script>
+    console.log(parseDate(new Date));
+</script>
+</body>
+</html>

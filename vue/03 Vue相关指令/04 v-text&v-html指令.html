@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h1 v-text="text">初始内容</h1>
+    <h1 v-html="html">初始内容</h1>
+</div>
+
+<script>
+    /*
+    *
+    * 1.v-text指令：可以获取data数据并设置元素的innerText
+    *
+    * 2.v-html指令：可以获取data数据并设置元素的innerHTML
+    *
+    * v-html不建议使用会造成XSS攻击
+    * v-text是修改全部内容，插入表达式修改部分内容
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            text: "<p>v-text</p>",
+            html: "<p>v-html</p>"
+        }
+    });
+</script>
+</body>
+</html>

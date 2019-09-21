@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    *
+    * 1.区分字符串对象和字符串类型
+    *   字符串对象：String
+    *   字符串类型：string
+    *
+    * 2.JS中没有字符类型，单是字符串可以看成字符数组
+    *
+    * 3.字符串是不可变的
+    *
+    *
+    * 4.字符串常用方法
+    *   charAt
+    *   fromCharCode
+    *   indexOf,lastIndexOf
+    *   replace
+    *   slice
+    *   substr
+    *   substring
+    *   split
+    *   toLowerCase toLoacleLowerCase
+    *   toUpperCase toLocaleUpperCase
+    *   trim
+    *   concat
+    *
+    *
+    *
+    *
+    * */
+</script>
+
+<script>
+    var s1 = "我爱最帅的杨哥，哥太帅了";
+    console.log(s1.charAt(1));
+    console.log(String.fromCharCode(65));
+    console.log(s1.indexOf("哥"), s1.lastIndexOf("哥"));
+    console.log(s1.replace("帅", "猥琐"));
+    console.log(s1.slice(0, 2));
+    console.log(s1.substr(0, 2));
+    console.log(s1.substring(0, 2));
+    console.log(s1.split("，"));
+    console.log("DJIOAFdafda".toLocaleLowerCase());
+    console.log("DJIOAFdafda".toLowerCase());
+    console.log("DJIOAFdafda".toUpperCase());
+    console.log("DJIOAFdafda".toLocaleUpperCase());
+    console.log(" DJI OAFdafda  ".trim());
+</script>
+
+<script>
+    var s1 = "我爱最帅的杨哥，哥太帅了";
+
+    console.log(s1.substr(s1.indexOf("杨哥"), "杨哥".length));
+
+    var s2 = "hello wod odd ott fbo nhyo";
+
+    var index = 0;
+    while ((index = s2.indexOf("o", index)) != -1) {
+        console.log(index);
+        index++;
+    }
+
+
+    var s3 = "whatOareYyouYnoYshaHleiHoHmyHgod";
+
+    s3 = s3.toLowerCase();
+
+    var obj = {};
+
+    for (var i = 0; i < s3.length; i++) {
+        var key = s3[i];
+        if (obj[key]) {
+            obj[key]++;
+        } else {
+            obj[key] = 1;
+        }
+    }
+
+    for (var i = 0; i < 1; i++) {
+        console.log(i);
+    }
+
+    for (var key in obj) {
+        console.log(key + "出现了" + obj[key] + "次");
+    }
+
+
+</script>
+</body>
+</html>

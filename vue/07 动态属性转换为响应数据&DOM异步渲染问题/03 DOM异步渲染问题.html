@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <p>{{msg}}</p>
+    <button @click="change">修改msg内容</button>
+</div>
+
+<script>
+    /*
+    *
+    * 当修改data数据后，页面重新渲染。这个过程是异步执行的。
+    * 这个过程中需要操作最新更新后的DOM需要通过$nextTick方法或者nextTick方法
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        methods: {
+            change: function () {
+                this.msg = "内容修改了";
+                //打印的是“内容”。。。。异步问题
+                console.log(document.querySelector("p").innerText);
+
+                //该处为内容已经修改完！
+                this.$nextTick(function () {
+                    console.log(document.querySelector("p").innerText);
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

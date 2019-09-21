@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+
+<script src="js/common.js"></script>
+<script>
+    //当前事件源对象
+    my$("btn").addEventListener("click",function(){
+        console.log(this);
+    },false);
+
+    //window对象
+    my$("btn").attachEvent("click",function () {
+        console.log(this);
+    })
+</script>
+
+</body>
+</html>

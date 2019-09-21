@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 对象是通过构造函数创建---创建的过程叫做实例化
+    *
+    * 判断对象是某种类型
+    *   方式一：对象.constructor == 构造函数名称
+    *   方式二：通过instanceof关键字
+    *
+    * */
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    function Animal(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var person = new Person("zhangsan", 18);
+    var animal = new Animal("xiaohua", 2);
+    console.dir(Person);        //显示对象的结构
+    console.dir(person);
+    console.log(person.__proto__.constructor == Person.prototype.constructor);
+    console.log(person.constructor == Person.prototype.constructor);
+    console.log(Person.constructor);        //Person.construtor与Person.prototype.construtcor不同
+    console.log(person.constructor == animal.constructor);
+</script>
+</body>
+</html>

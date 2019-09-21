@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--文档流/标准流：元素内容从上到下，从左到右的排布方式-->
+    <!---->
+    <!--浮动：将元素从正常的文档流中脱离出来，从而使得块级元素可以在同一行显示-->
+    <!--float: left/right/none-->
+    <!---->
+    <!--浮动特性：-->
+    <!--嵌套盒子中：子元素浮动后不能跨越父元素设置的padding-->
+    <!--浮动只会影响下面的元素-->
+    <!--浮动会隐式转换元素的显示模式：块级和行内，都会转换为行内块-->
+
+    <style>
+        /*div{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+        /*}*/
+        #d1{
+            background-color: orange;
+            /*float: left;*/
+        }
+        #d2{
+            width: 200px;
+            background-color: pink;
+            /*float: left;*/
+        }
+        #d3{
+            background-color: skyblue;
+            /*float: left;*/
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            padding: 30px;
+        }
+        #inner{
+            /*width: 100px;*/
+            height: 100px;
+            background-color: pink;
+            float: right;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="inner">fdafdsa</div>
+</div>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<span>fdjsaklfdas</span>
+</body>
+</html>

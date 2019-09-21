@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="设置段落内容" id="btn" />
+<p id="p1">段落</p>
+
+<script>
+    //凡是成对的标签修改内容可以通过innerText属性
+    document.getElementById("btn").onclick = function () {
+      document.getElementById("p1").innerText = "通过JS修改段落内容";
+    };
+</script>
+</body>
+</html>

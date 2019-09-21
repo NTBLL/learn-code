@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--子绝父相：目的在于让子元素可以在父元素的任意位置显示-->
+    <style>
+        #box{
+            width: 310px;
+            height: 190px;
+            margin: 100px auto;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            position: relative;
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="../images/adv.jpg" alt="">
+        <img src="../images/top_tu.gif" alt="" class="top">
+        <img src="../images/br.gif" alt="" class="bottom">
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .top,.banner,.main,.footer{
+            margin: 0 auto;
+            width: 960px;
+        }
+        .top{
+            height: 60px;
+            background-color: deepskyblue;
+        }
+        .banner{
+            height: 150px;
+            background: orange;
+            margin: 6px auto;
+        }
+        ul li{list-style: none;}
+        .banner li{
+            height: 150px;
+            width: 225px;
+            float: left;
+            margin-right: 20px;
+        }
+        .banner .one,.banner .three{
+            background-color: deeppink;
+        }
+        .banner .two,.banner .four{
+            background-color: green;
+        }
+        .banner .four{
+            margin-right: 0;
+        }
+        .main{
+            height: 600px;
+            background-color: pink;
+            margin-bottom: 6px;
+        }
+        .main .left{
+            width: 374px;
+            background-color: purple;
+            float: left;
+            height: 600px;
+        }
+        .main .right{
+            width: 576px;
+            height: 600px;
+            background-color: red;
+            float: right;
+        }
+        .footer{
+            height: 200px;
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+<div class="top"></div>
+<div class="banner">
+    <ul>
+        <li class="one"></li>
+        <li class="two"></li>
+        <li class="three"></li>
+        <li class="four"></li>
+    </ul>
+</div>
+<div class="main">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

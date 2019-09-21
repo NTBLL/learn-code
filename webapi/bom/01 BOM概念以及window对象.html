@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*
+    *
+    * BOM功能：用于操作浏览器
+    *
+    * 浏览器中的顶级对象是window对象
+    * 页面中的顶级对象是document对象
+    * 页面中的所有内容都属于浏览器，所以页面中的所有内容也属于window对象
+    * 如变量，函数等
+    *
+    * 其中window对象通常可以省略
+    *
+    * window中的特殊属性name,所有定义变量一般不要进行重名
+    *
+    * window与top对象是相等的
+    *
+    * */
+</script>
+<script>
+    var num = 10;
+    function f1(){
+        console.log("10");
+    }
+    console.log(window.num);
+    window.f1();
+
+    console.log(window.name);
+
+    console.log(top);
+    console.log(window);
+    console.log(top === window);
+
+
+</script>
+</body>
+</html>

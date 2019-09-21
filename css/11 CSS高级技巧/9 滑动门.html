@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--滑动门实现结构：a>span-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            background: url("../images/wx.jpg") repeat-x;
+            height: 74px;
+            line-height: 74px;
+            padding-left: 40px;
+            list-style-type: none;
+        }
+        .nav li{
+            float: left;
+            margin-right: 20px;
+        }
+        .nav a{
+            display: inline-block;
+            height: 32px;
+            text-decoration: none;
+            color: #ffffff;
+            text-align: center;
+            background: url("../images/to.png") no-repeat;
+            padding-left: 14px;
+            line-height: 32px;
+        }
+        .nav span{
+            display: inline-block;
+            background: url("../images/to.png") no-repeat right;
+            height: 32px;
+            padding-right: 14px;
+        }
+        .nav a:hover,.nav a:hover span{
+            background-image: url("../images/ao.png");
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">
+                <span>首fdsafdsa页</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>首fdsafdsa页</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>首fdsafdsa页</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>首fdsafdsa页</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>首fdsafdsa页</span>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

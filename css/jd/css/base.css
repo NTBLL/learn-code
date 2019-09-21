@@ -1,0 +1,415 @@
+/*公共CSS*/
+
+
+@font-face {  /* 声明字体 */
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?8qhwk5');
+    src:  url('../fonts/icomoon.eot?8qhwk5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?8qhwk5') format('truetype'),
+    url('../fonts/icomoon.woff?8qhwk5') format('woff'),
+    url('../fonts/icomoon.svg?8qhwk5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-color: #f4f4f4;
+}
+.w{
+    width: 1190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+i{font-style: normal;}
+ul,li,h3{margin: 0;padding: 0px;}
+li{list-style: none;}
+a{text-decoration: none;}
+.style-red{color: #F10215!important;}
+input{padding: 0;}
+dl,dd{
+    margin: 0;
+    padding: 0;
+}
+
+/*公共头部 start*/
+.J_event{
+    background: #e4e1e1;
+}
+.J_event a{
+    display: block;
+    height: 80px;
+    background: url("../images/Jevent.webp") no-repeat;
+    position: relative;
+}
+.J_event span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font: 16px/20px icomoon;
+    color: #fafafa;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,.3);
+}
+/*公共头部 end*/
+
+/*快捷导航栏 start*/
+.shutcut{
+    background: #e3e4e5;
+    height: 30px;
+}
+.shutcut .left li{
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.shutcut .left i {
+    font-family: icomoon;
+    color: #F10215;
+    font-size: 14px;
+}
+.shutcut .left span{
+    color: #999;
+}
+.shutcut .right li{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.shutcut .right{
+    margin-right: 40px;
+}
+.shutcut .right a{
+    color: #999;
+
+}
+.shutcut .right a:hover{
+    color: #F10215;
+}
+.shutcut .right .space{
+    width: 1px;
+    height: 10px;
+    background-color: #999;
+    margin: 10px 12px 0;
+}
+.shutcut .right i{
+    font-family: icomoon;
+    color: #999999;
+    display: inline-block;
+
+}
+.shutcut .right .isSign{
+    margin-right: 8px;
+}
+.erwaima{
+    width: 60px;
+    height: 60px;
+    padding: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    position: absolute;
+    top: 35px;
+    right: -15px;
+}
+/*快捷导航栏 end*/
+
+
+/*header start*/
+
+.header{
+    height: 140px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .inner{
+    height: 140px;
+    position: relative;
+}
+
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 190px;
+    height: 120px;
+}
+
+.search{
+    width: 546px;
+    height: 32px;
+    background-color: purple;
+    position: absolute;
+    top: 16px;
+    left: 300px;
+}
+
+.search input{
+    width: 415px;
+    height: 26px;
+    outline: none;
+    border: 1px solid #F10215;
+    color: #cccccc;
+    padding: 2px 60px 2px 17px;
+    float: left;
+}
+.search button{
+    width: 52px;
+    outline: none;
+    height: 32px;
+    float: left;
+    border: 0;
+    background-color: #F10215;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.search i{
+    font-family: icomoon;
+}
+
+.myCar{
+    width: 132px;
+    height: 32px;
+    position: absolute;
+    text-align: center;
+    line-height: 32px;
+    top: 16px;
+    left: 865px;
+    color: #F10215;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+}
+
+.myCar i{
+    font-family: icomoon;
+    display: inline-block;
+    padding-right: 12px;
+}
+
+.myCar s{
+    position: absolute;
+    background-color: #F10215;
+    height: 12px;
+    width: 18px;
+    border-radius: 6px;
+    padding: 0 2px;
+    text-align: center;
+    line-height: 12px;
+    top: 2px;
+    left: 30px;
+    color: #ffffff;
+}
+
+.hotwords{
+    width: 500px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 52px;
+    left: 300px;
+}
+
+.hotwords li{
+    float: left;
+    font-size: 12px;
+    margin-right: 6px;
+}
+.hotwords a{
+    color: #999999;
+}
+.hotwords a:hover{
+    color: #F10215;
+}
+
+.navItem{
+    position: absolute;
+    left: 264px;
+    bottom: 0;
+    width: 762px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 15px;
+}
+
+.navItem li{
+    float: left;
+    margin: 0 11px;
+}
+
+.navItem a{
+    color: #333333;
+}
+
+a.current{
+    font-weight: 700;
+    color: #F10215;
+}
+
+.navItem a:hover{
+    color: #F10215;
+}
+
+/*header end*/
+
+
+/*footer start*/
+/*.footer{*/
+    /*height: 203px;*/
+/*}*/
+.service{
+    height: 43px;
+    text-align: center;
+    line-height: 43px;
+    padding: 30px 0;
+}
+.service li{
+    float: left;
+    width: 279px;
+    height: 43px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.service span{
+    vertical-align: middle;
+}
+
+.serviceicon{
+    display: inline-block;
+    width: 36px;
+    height: 42px;
+    background: url("../images/jlt.png") no-repeat 0 -192px;
+}
+
+.help{
+    height: 175px;
+    border-top: 1px solid #dddddd;
+}
+
+.list{
+    padding: 22px 0;
+    border-bottom: 1px solid #dddddd;
+    overflow: hidden;
+}
+
+.help li{
+    float: left;
+    width: 170px;
+    margin-right: 55px;
+    /*background-color: pink;*/
+    text-align: center;
+}
+
+.help dt{
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.help dd{
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.help dd a,.help dd{
+    font-size: 12px;
+    color: #666666;
+}
+
+.help dd a:hover{
+    font-size: 12px;
+    color: #F10215;
+}
+
+.help .map{
+    background: url("../images/jlt.png") no-repeat 3px -14px;
+    height: 132px;
+    text-align: center;
+    width: 210px;
+}
+.help .map dt{
+    text-align: center;
+}
+
+.about{
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.about li{
+    float: left;
+    text-align: center;
+}
+
+.about li a{
+    color: #666666;
+    font-size: 12px;
+
+}
+.about li a:hover{
+    color: #F10215;
+
+}
+
+.about .inner{
+    width: 1190px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 80px;
+}
+
+.about .spacer{
+    width: 1px;
+    height: 10px;
+    margin: 5px 10px 0;
+    background-color: #999;
+}
+
+.about p{
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+}
+
+.sb{
+    width: 1190px;
+    padding: 30px 0;
+    overflow: hidden;
+}
+.sb .brand{
+    width: 600px;
+    margin: 0 auto;
+}
+.sb a{
+    display: block;
+    float: left;
+    width: 103px;
+    height: 32px;
+    margin: 0 5px 0 0;
+    background: url("../images/jlt.png") no-repeat -210px 0;
+}
+/*footer end*/
+
+
+
+
+
+
+
+
+
+

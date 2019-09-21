@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>遍历 DOM 树</h1>
+<p style="color: green;">Tip: 可以在遍历的回调函数中任意定制需求</p>
+<div>
+    <ul>
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+    </ul>
+    <div>
+        <div>
+            <span>haha</span>
+        </div>
+    </div>
+</div>
+<div id="demo_node">
+    <ul>
+        <li>123</li>
+    </ul>
+    <p>hello</p>
+    <h2>world</h2>
+    <div>
+        <p>dsa</p>
+        <h3>
+            <span>dsads</span>
+        </h3>
+    </div>
+</div>
+<script>
+    var root = document.documentElement;
+
+    function forDOM(root){
+        console.log(root.nodeName);
+
+        var children = root.children;
+
+        forChildren(children);
+    }
+
+    function forChildren(children){
+        if (children) {
+            for (var i = 0; i < children.length; i++) {
+                forDOM(children[i]);
+            }
+        }
+    }
+
+    forDOM(root);
+</script>
+</body>
+</html>

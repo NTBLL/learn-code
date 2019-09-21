@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .init{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+        .font{
+            font-size: 24px;
+        }
+        .color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <p :class="classStr">类样式1</p>
+    <p :class="classObj">类样式2</p>
+    <p :class="classArr">类样式3</p>
+    <p :style="styleStr">style顺序1</p>
+    <p :style="styleObj">style顺序2</p>
+</div>
+
+<script>
+    /*
+    *
+    * v-bind设置类样式
+    *   方式一：通过普通字符串，不易于操作 "类样式 类样式"
+    *   方式二：通过对象方式 {类样式:布尔类型,类样式:布尔类型,类样式:布尔类型}
+    *   方式三：通过数组方式 ["类样式","类样式"]
+    *
+    *
+    * v-bind设置style属性
+    *   方式一：通过字符串方式 "属性：属性值；.."
+    *   方式二：通过对象方式  {属性:属性值,属性:属性值...}
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            classObj: {init:true,font:true,color:true},
+            classStr: "init font color",
+            classArr: ["init","font","color"],
+            styleStr: "font-size:36px;",
+            styleObj: {fontSize:"12px",color:"pink"}
+        }
+    });
+</script>
+
+</body>
+</html>

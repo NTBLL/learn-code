@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{arr}}</p>
+    <button @click="change">通过索引修改下标</button>
+</div>
+
+
+<script>
+    /*
+    *
+    * 通过索引修改数组，这时候数组中数据不能响应到页面
+    * 操作数组长度也不能，这时候需要$set或set方法进行操作
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            arr: ["张三","李四","王五"]
+        },
+        methods: {
+            change: function () {
+                //this.arr[0] = "zs";
+                //this.arr.length = 4;
+
+                this.$set(this.arr, 0 ,"zs");
+            }
+        }
+    });
+</script>
+</body>
+</html>

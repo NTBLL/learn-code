@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 继承：是类与类之间的关系，JS中没有类这个概念，可以通过构造函数模拟类，通过
+    * 原型进行实现继承
+    *
+    *
+    * */
+</script>
+<script>
+    function Person(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    Person.prototype.eat = function () {
+      console.log("eat");
+    };
+    function Student(score){
+        this.score = score;
+    }
+    Student.prototype = new Person("张三",18,"男");
+    Student.prototype.study = function () {
+      console.log("study");
+    };
+    // Student.prototype.eat = function () {
+    //   console.log("student eat");
+    // };
+    var student = new Student(80);
+    console.log(student.name);
+    console.log(student.age);
+    console.log(student.sex);
+    console.log(student.score);
+    student.eat();
+    student.study();
+    console.dir(student);
+</script>
+</body>
+</html>

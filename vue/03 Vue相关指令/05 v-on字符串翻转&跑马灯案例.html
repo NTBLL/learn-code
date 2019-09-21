@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button @click="reverse">字符串反转</button>
+    <p>{{msg}}</p>
+    <button @click="start">开始</button>
+    <button @click="stop">结束</button>
+    <h1>{{content}}</h1>
+</div>
+
+
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内fsafasfdsafdsa容",
+            content: "天下武功，唯快不破。号令天下，谁敢不从！！！！",
+            timeId: ""
+        },
+        methods:{
+            reverse: function () {
+                this.msg = this.msg.split("").reverse().join("");
+            },
+            start: function () {
+                if (this.timeId) return;
+                this.timeId = setInterval(() => {
+                    let first = this.content.charAt(0);
+                    this.content = this.content.substr(1) + first;
+                }, 100);
+            },
+            stop: function () {
+                clearInterval(this.timeId);
+                this.timeId = "";
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

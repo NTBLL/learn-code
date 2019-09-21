@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .lighter{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+        .switch{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+        .active{
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="app">
+    <lighter></lighter>
+    <sw></sw>
+</div>
+
+
+<script src="../vue.js"></script>
+<script>
+    var bus = new Vue();
+    var lighter = {
+        template: `<div class="lighter" :class="isOn">这是一盏灯</div>`,
+        data(){
+            return {isOn:{active:false}};
+        },
+        created: function () {
+            bus.$on("onOff",active => {
+                this.isOn.active = active;
+            })
+        }
+    };
+    var sw = {
+        template: `<div class="switch">
+                        <button @click="on">开灯</button>
+                        <button @click="off">关灯</button>
+                    </div>`,
+        methods: {
+            on: function () {
+                bus.$emit("onOff",true);
+            },
+            off: function () {
+                bus.$emit("onOff",false);
+            }
+        }
+
+    };
+    Vue.component("lighter",lighter);
+    Vue.component("sw",sw);
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        }
+    });
+</script>
+</body>
+</html>

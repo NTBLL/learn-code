@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app" @click.capture="f2('div')" style="width: 100px;height: 100px;background-color: pink;">
+    <span v-on:click.passive="f1">注册事件</span>
+    <span @click="f2('xixixi')">注册事件</span>
+    <a href="http://www.baidu.com" @click.once.prevent="f1">百度</a>
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.v-on
+    *   用于注册事件：v-on:click="fn"
+    *   v-on:可以简写为：@click="fn(实参)"
+    *
+    *   方法写在Vue中的methods属性中，methods属性中的this表示Vue对象
+    *   Vue将data中的数据，进行劫持放入到了Vue对象中
+    *
+    * 2.事件修饰符
+    *   写法：@click.修饰符..
+    *   stop表示阻止冒泡
+    *   prevent表示阻止默认行为
+    *   capture表示捕获事件
+    *   once表示执行一次
+    *   passive表示加快移动端效率
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        methods: {
+            f1: function () {
+             console.log(this.msg);
+            },
+            f2: function (param) {
+                console.log(param);
+            }
+        }
+    });
+</script>
+</body>
+</html>

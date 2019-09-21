@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="images/3.jpg"><img src="images/1.jpg" alt="" width="500" height="707"></a>
+<input type="button" value="按钮" id="btn" />
+<img src="images/2.jpg" alt="" id="im">
+<script>
+    //点击图片修改路径
+    document.getElementsByTagName("img")[0].onclick = function(){
+        var aHref = document.getElementsByTagName("a")[0].href;
+        this.src = aHref;
+        return false;       //阻止超链接跳转
+    }
+
+    //点击按钮切换图片
+    function my$(id){
+        return document.getElementById(id);
+    }
+
+    my$("btn").onclick = function () {
+        my$("im").src = "images/3.jpg";
+        my$("im").width = "100";
+    }
+</script>
+</body>
+</html>

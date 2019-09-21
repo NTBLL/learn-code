@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="n" /> +
+    <input type="text" v-model="m" /> +
+    <span>{{sum}}</span>
+    <span>{{sum}}</span>
+    <span>{{sum}}</span>
+    <span>{{sum}}</span>
+    <span>{{sum}}</span>
+</div>
+
+
+<script>
+    /*
+    *
+    * 计算数据是根据data中数据进行一些列操作后，返回的数据通过computed进行提供
+    * 简写形式：
+    * computed:{数值名称:对data数据操作返回}
+    *
+    * 完整形式：
+    * computed:{数值名称:{get(){},set(){}}}
+    * get方法就是简写形式的函数，不建议使用set方法，因为计算数据就是通过对已有
+    * 数据计算而来，不进行手动设置数据
+    *
+    *
+    * 计算数据的设置使用缓存设计
+    * 只有原始数据改变才进行get方法调用
+    *
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            n: 0,
+            m: 0,
+            str: "hello world"
+        },
+        //基本使用
+        computed: {
+            sum: function () {
+                console.log("sum...");
+                return +this.n + +this.m;
+            },
+            reverse: {
+                get() {
+                    return this.str.split("").reverse().join("");
+                }
+                //Computed property "reverse" was assigned to but it has no setter.
+                // },
+                // set(){
+                //     console.log("set方法调用了....");
+                // }
+            }
+        }
+    });
+</script>
+</body>
+</html>

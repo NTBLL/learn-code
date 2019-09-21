@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    Array.prototype.mySort = function () {
+        for (var i = 0; i < this.length - 1; i++) {
+            for (var j = 0; j < this.length - 1 - i; j++) {
+                if (this[j] > this[j + 1]) {
+                    var temp = this[j];
+                    this[j] = this[j + 1];
+                    this[j + 1] = temp;
+                }
+            }
+        }
+    };
+
+    var arr = [56,989,2,4,998,15,8789,2645,44];
+    arr.mySort();
+    console.log(arr);
+</script>
+</body>
+</html>

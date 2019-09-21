@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-show="flag">段落标签1</p>
+    <p v-if="flag">段落标签2</p>
+</div>
+
+
+<script>
+    /*
+    *
+    * v-show与v-if指令都可以设置元素的显示与隐藏
+    * v-show="true"
+    * v-if="true"
+    *
+    * 两者的区别在于：前者通过CSS display=none进行设置 后者通过DOM操作进行创建和删除元素
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            flag: true
+        }
+    });
+</script>
+</body>
+</html>

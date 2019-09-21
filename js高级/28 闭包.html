@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 闭包：函数A中有函数B，函数B使用函数A中的变量或数据，这时候形成了闭包
+        *
+        * 闭包模式：
+        *       函数闭包：函数中有函数
+        *       对象闭包：函数中有对象
+        *
+        * 闭包的优缺点：缓存数据，延长作用域
+        *
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+
+<script>
+    //演示闭包
+    // function a(){
+    //     var num = 10;
+    //     return function () {
+    //         num++;
+    //         return num;
+    //     }
+    // }
+    // var b = a();
+    // console.log(b());
+    // console.log(b());
+    // console.log(b());
+
+    //产生相同随机数案例
+    function createRandom(){
+        var random = parseInt(Math.random()*10 + 1);
+        return function () {
+            return random;
+        };
+    }
+    var random = createRandom();
+    console.log(random());
+    console.log(random());
+    console.log(random());
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{msg}}</p>
+</div>
+
+<script>
+    /*
+    *
+    * VUE生命周期：从VUE被创建到被销毁的过程就是一个生命周期。
+    *
+    * 生命周期过程：
+    *
+    * 创建Vue实例对象：new Vue()
+    *
+    * 初始化事件，生命周期开始
+    *
+    * 初始化数据，Vue通过Object.defineProperty将data数据初始化到实例对象中
+    *
+    * 判断是否有el
+    *   没有：等待要被挂载管理的内容$.mount()，，挂载后进行下一步判断
+    *   有：进行下一步判断
+    *
+    * 判断是否有template
+    *   没有template就以el所管理的内容进行解析
+    *   有就舍弃el，解析template中配置的内容
+    *
+    * 将所管理的内容进行解析
+    *
+    * 数据更新-》重新解析
+    *
+    * 销毁 $destroy()
+    *
+    * 销毁后修改数据后不能在驱动视图
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        // el: "#app",
+        data: {
+            msg: "内容"
+        },
+        template: "<h1>{{msg}}</h1>"
+    });
+    vm.$mount("#app");
+</script>
+</body>
+</html>

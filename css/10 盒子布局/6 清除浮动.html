@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--问题：当父元素包裹浮动元素来避免浮动造成的影响，但是没有给父元素设置高度还是不能避免浮动造成的影响-->
+    <!--清除浮动方式：-->
+    <!--额外元素方法：通过在浮动元素的后面添加一个div元素，并设置clear:both属性-->
+    <!--给父元素添加overflow:hidden属性-->
+    <!--伪元素：.clearfix:after{content:"",height:0;display:block;clear:both;visibility: hidden;} .clearfix{*zoom:1;}-->
+    <!--双伪元素：.clearfix:before,.clearfix:after{content:"";display:table;} .clearfix:after{clear:both;} .clearfix{*zoom:1;}-->
+
+    <!--清除浮动后，父元素高度为子元素中最高的高度-->
+    <style>
+        .clearfix:before,.clearfix:after{
+            content: "";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+
+        /*.clearfix:after{*/
+            /*content: "";*/
+            /*display: block;*/
+            /*height: 0;*/
+            /*clear: both;*/
+            /*visibility: hidden;*/
+        /*}*/
+        /*.clearfix{*/
+            /**zoom: 1;*/
+        /*}*/
+        #father{
+            background-color: yellow;
+            width: 300px;
+            /*overflow: hidden;*/
+        }
+        #s1,#s2{
+            float: left;
+        }
+        #s1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #s2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        #box{
+            width: 350px;
+            height: 100px;
+            background-color: red;
+        }
+        /*.clear{*/
+            /*clear: both;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="father" class="clearfix">
+    <div id="s1"></div>
+    <div id="s2"></div>
+    <!--<div class="clear"></div>-->
+</div>
+<div id="box"></div>
+</body>
+</html>

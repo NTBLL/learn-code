@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="uu">
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+</ul>
+
+<script>
+    //通过节点操作隔行变色
+    var obj = document.getElementById("uu");
+
+    var childs = obj.childNodes;
+    var count = 0;
+    for (var i = 0; i < childs.length; i++) {
+
+        if (childs[i].nodeType == 1) {
+            childs[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+            count++;
+        }
+    }
+</script>
+</body>
+</html>

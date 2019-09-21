@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        ul {
+            list-style: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1150px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+
+        div ul {
+            width: 1300px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="../js/common.js"></script>
+<script>
+    var box = my$("box");
+    var lis = box.getElementsByTagName("li");
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+
+        lis[i].onmouseover = function () {
+            for (var j = 0; j < lis.length; j++) {
+                animate(lis[j], {width: 100})
+            }
+            animate(this, {width: 800})
+        };
+
+        lis[i].onmouseout = function () {
+            for (var j = 0; j < lis.length; j++) {
+                animate(lis[j], {width: 240})
+            }
+        };
+    }
+
+    function getElementStyle(element, attr) {
+        //  IE8 || 谷歌 火狐
+        return element.currentStyle ? element.currentStyle[attr] : window.getComputedStyle(element, null)[attr];
+    }
+
+    //封装动画函数之添加透明度和层叠属性
+    function animate(element, attrs, fn) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            //用于判断是否所有的属性到达目标
+            var flag = true;
+            for (var attr in attrs) {
+                if (attr == "zIndex") {
+                    element.style[attr] = attrs[attr];
+                } else if (attr == "opacity") {
+                    var current = getElementStyle(element, attr) * 100;
+                    var target = attrs[attr] * 100;
+                    var step = Math.ceil(Math.abs(current - target) / 10);
+                    step = current - target < 0 ? step : -step;
+                    element.style[attr] = (current + step) / 100;
+
+                } else {
+                    var current = parseInt(getElementStyle(element, attr));
+                    var target = attrs[attr];
+                    var step = Math.ceil(Math.abs(current - target) / 10);
+                    step = current - target < 0 ? step : -step;
+                    element.style[attr] = current + step + "px";
+
+                }
+                if (current != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(element.timeId);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 20);
+    }
+</script>
+
+</body>
+</html>

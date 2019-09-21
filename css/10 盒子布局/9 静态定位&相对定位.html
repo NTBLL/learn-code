@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--静态定位：默认值，无法通过位偏移属性来移动元素；可以通过该属性来取消定位-->
+    <!--相对定位：relative-->
+        <!--定位后，还占有原来位置-->
+        <!--根据自身元素的左上角进行定位-->
+    <style>
+        #test{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*margin: 100px;*/
+            /*position: static;*/
+            position: relative;
+            left: 50px;
+            top: 200px;
+        }
+        #box{
+            width: 600px;
+            height: 600px;
+            border: 1px solid pink;
+
+        }
+        #son{
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <div id="test"></div>
+    <div id="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * GET请求并设置参数
+    *
+    * POST请求
+    *
+    * 同步&异步
+    * 同步：做事一件一件的执行
+    * 异步：多个事情可以同时执行
+    * 进程：进行中的程序
+    * 线程：进程中的一条执行路径
+    * 多线程：进行中多条执行路径
+    *
+    *
+    * 响应结果
+    * 字符串，XML，JSON
+    * 字符串直接获取
+    * XML获取后可以通过document方式进行操作
+    * JOSN字符串可以将其转化为对象进行操作
+    *
+    *
+    * */
+</script>
+<script>
+    //GET请求并传递参数
+    // var xhr = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    // xhr.open("GET","get?id=1");
+    // xhr.send(null);
+    // xhr.onreadystatechange = function () {
+    //   if (this.readyState != 4) return;
+    //   console.log(this.responseText);
+    // };
+
+    //POST请求
+    // var xhr = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    // xhr.open("POST","get");
+    // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    // xhr.send("id=0");
+    // xhr.onreadystatechange = function () {
+    //     if (this.readyState != 4) return;
+    //     console.log(this.responseText);
+    // };
+
+    //同步&异步
+    // var xhr = XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    // //参数三表示是否异步
+    // xhr.open("GET","get?id=1",false);
+    // //同步，注册事件无法触发；无论同步还是异步都要在send前注册
+    // xhr.onreadystatechange = function () {
+    //     if (this.readyState != 4) return;
+    //     console.log(this.responseText);
+    // };
+    // //send方法为阻塞方法
+    // console.time("abc");
+    // xhr.send(null);
+    // console.timeEnd("abc");
+
+
+    //响应结果
+    var xhr = XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open("GET","data");
+    xhr.send(null);
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+      //console.log(this.responseText);
+
+        // var doc = this.responseXML;
+        // console.log(doc.getElementsByTagName("name"));
+
+        var json = JSON.parse(this.responseText);
+        console.log(json.name,json.age);
+    };
+
+
+</script>
+</body>
+</html>

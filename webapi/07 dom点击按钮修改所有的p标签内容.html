@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="修改段落标签内容" id="btn"/>
+<div id="box">
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+</div>
+<p>456</p>
+<p>456</p>
+<p>456</p>
+<p>456</p>
+
+<script>
+    document.getElementById("btn").onclick = function () {
+        //返回的是伪数组
+        var pObjs = document.getElementById("box").getElementsByTagName("p");
+        for (var i = 0; i < pObjs.length; i++) {
+            pObjs[i].innerText = "修改后的内容";
+        }
+    };
+</script>
+</body>
+</html>

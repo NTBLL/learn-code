@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>段落</p>
+    <span>噫噫噫</span>
+    <p>段落</p>
+    <span>噫噫噫</span>
+    <p>段落</p>
+    <span>噫噫噫</span>
+    <p>段落</p>
+    <a href="#">超链接</a>
+</div>
+<script>
+    /*
+    *
+    * 节点：HTML文档中的所有的内容都可以看作一个个节点
+    *
+    * 节点属性：
+    *   标签：nodeType 1 nodeName 标签名大写 nodeValue null
+    *   属性：nodeType 2 nodeName 属性名小写 nodeValue 属性值
+    *   文本：nodeType 3 nodeName #text nodeValue 标签内容
+    *
+    *
+    * 没有兼容性问题
+    * 获取父节点和父元素
+    * 父节点：.parentNode
+    * 父元素：.parentElement
+    * 父节点与父元素是相等的
+    *
+    * 获取子节点和子元素
+    * 子节点：.childNodes
+    * 子元素：.children
+    *
+    *
+    * 下面的有兼容性问题
+    * 谷歌和火狐或节点就是节点，获取元素就是元素
+    * IE8不支持获取元素方法，获取节点方法是获取元素的方法
+    *
+    * 获取第一个子节点和子元素
+    * 节点：.fristChild
+    * 元素：.fristElementChild
+    *
+    * 获取最后子节点和子元素
+    * 节点：.lastChild
+    * 元素：.lastElementChild
+    *
+    * 获取当前节点的前一个节点和元素
+    * 节点：.previousSibling
+    * 元素：.previousElementSibling
+    *
+    * 获取当前节点的后一个节点和元素
+    * 节点：.nextSibling
+    * 元素：.nextElementSibling
+    *
+    * 获取属性节点:getAttributeNode("属性名称")
+    *
+    *
+    *
+    * */
+</script>
+<script>
+    //通过节点操作元素的背景颜色
+    var divObj = document.getElementsByTagName("div")[0];
+    var childs = divObj.childNodes;
+    for (var i = 0; i < childs.length; i++) {
+        if (childs[i].nodeType == 1 && childs[i].nodeName != "P"){
+            childs[i].style.backgroundColor = "pink";
+        }
+    }
+</script>
+</body>
+</html>

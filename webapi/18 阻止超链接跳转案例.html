@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="images/3.jpg" id="ak"><img src="images/3.jpg" width="100" alt=""></a>
+<img src="" alt="" id="im">
+
+<script src="js/common.js"></script>
+<script>
+    //小图转换为大图
+    my$("ak").onclick = function () {
+        my$("im").src = this.href;
+        return false;
+    }
+</script>
+</body>
+</html>

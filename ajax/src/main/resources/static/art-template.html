@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="content"></table>
+
+<script src="template-web.js"></script>
+<script id="templ" type="application/x-art-template">
+    {{each comments}}
+    <tr>
+        <td>{{$value.name}}</td>
+        <td>{{$value.age}}</td>
+        <td>{{$value.sex}}</td>
+    </tr>
+    {{/each}}
+</script>
+<script>
+    var content = [
+        {name:"zhangsan",age:10,sex:"mela"},
+        {name:"zhangsan1",age:11,sex:"fmela"},
+        {name:"zhangsan2",age:12,sex:"mela"},
+        {name:"zhangsan3",age:13,sex:"mela"},
+        {name:"zhangsan4",age:14,sex:"fmela"},
+        {name:"zhangsan5",age:15,sex:"fmela"},
+        {name:"zhangsan6",age:16,sex:"mela"},
+    ];
+
+    var context = {comments : content};
+    var html = template("templ",context);
+
+    document.getElementById("content").innerHTML = html;
+</script>
+</body>
+</html>

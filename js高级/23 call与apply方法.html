@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * call与apply方法作用都是为函数或方法改变this的指向
+    * 不同是传入的参数方式不同，一个是数组形式，一个是一个个传入
+    *
+    * call和apply都是Function中prototype中的方法
+    *
+    *
+    *
+    * */
+    function f1(a, b) {
+        console.log(a + b, this);
+    }
+
+    f1.call(null, 1, 2);
+    f1.apply();
+
+    function Person(name) {
+        this.name = name;
+    }
+
+    var per = new Person("zs");
+    f1.call(per, 1, 2);
+    f1.apply(per, [1, 2]);
+
+    console.dir(f1);
+
+</script>
+</body>
+</html>

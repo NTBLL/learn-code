@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--body元素有一个默认外边距8px-->
+    <!--CSS初始化内外边距为0-->
+    <!--盒子水平居中 margin:0 auto-->
+    <!--盒子垂直方向设置外边距合并：margin-top margin-bottom 以大的为准-->
+    <!--嵌套盒子，外层盒子没有设置border或者overflow:hiden，则内部盒子设置margin会让盒子坍塌-->
+    <!--嵌套盒子，内部盒子没有设置宽度则设置padding不会撑开盒子-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+        #father{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            /*border: 1px solid black;*/
+            overflow: hidden;
+        }
+        #son{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 30px;
+        }
+        #fa{
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+        }
+        #so{
+            /*width: 300px;*/
+            height: 50px;
+            background-color: orange;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+<div id="box2"></div>
+<div id="father">
+    <div id="son"></div>
+</div>
+<div id="fa">
+    <div id="so"></div>
+</div>
+</body>
+</html>

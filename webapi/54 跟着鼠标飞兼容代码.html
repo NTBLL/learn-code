@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="images/tianshi.gif" alt="" id="im"/>
+
+<script src="js/common.js"></script>
+<script>
+    var evt = {
+        getEvent: function (e) {
+            return window.event ? window.event : e;
+        },
+        getClientX: function (e) {
+            return this.getEvent(e).clientX;
+        },
+        getClientY: function (e) {
+            return this.getEvent(e).clientY;
+        },
+        getScrollLeft: function () {
+            return window.pageXOffset || document.documentElement.scrollLeft ||
+                document.body.scrollLeft || 0;
+        },
+        getScrollTop: function () {
+            return window.pageYOffset || document.documentElement.scrollTop ||
+                document.body.scrollTop || 0;
+        },
+        getPageX: function (e) {
+            return this.getEvent(e).pageX ? this.getEvent(e).pageX : this.getClientX(e) + this.getScrollLeft();
+        },
+        getPageY: function (e) {
+            return this.getEvent(e).pageY ? this.getEvent(e).pageY : this.getClientY(e) + this.getScrollTop();
+        }
+    };
+
+    document.onmousemove = function (e) {
+        my$("im").style.left = evt.getPageX(e) + "px";
+        my$("im").style.top = evt.getPageY(e) + "px";
+    };
+</script>
+</body>
+</html>

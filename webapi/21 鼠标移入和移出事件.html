@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="hy">
+    <li>自来也</li>
+    <li>纲手</li>
+    <li>袁飞</li>
+    <li>大蛇丸</li>
+</ul>
+
+<script>
+    /*
+    *
+    * 鼠标移入和移出事件：onmouseover,onmouseout
+    * 鼠标样式属性：cursor:pointer
+    *
+    *
+    *
+    * */
+
+</script>
+
+<script src="js/common.js"></script>
+<script>
+    var lis = my$("hy").getElementsByTagName("li");
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].onmouseover = function(){
+            this.style.cursor = "pointer"
+            this.style.backgroundColor = "yellow";
+        };
+        lis[i].onmouseout = function(){
+            this.style.cursor = "";
+            this.style.backgroundColor = "";
+        }
+    }
+</script>
+</body>
+</html>

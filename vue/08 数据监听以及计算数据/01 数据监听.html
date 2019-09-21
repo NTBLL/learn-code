@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="msg">
+    <input type="text" v-model="car.brand">
+</div>
+
+
+<script>
+    /*
+    *
+    * 当数据发生改变，我们需要对齐进行观察可以通过watch属性
+    * 使用格式：watch: {监听的数据:监听处理函数....}
+    *
+    * 监听复杂数据类型---完整watch写法
+    * watch:{监听的数据:{handler:监听处理函数,deep:是否深度监听,immediate:是否初始化时监听}..}
+    *
+    * 监听数组类型数据,若数组内部是简单数据可以不用设置deep，否则要进行设置
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            car: {
+                brand: "宝马"
+            },
+            arr: [1, 2, 3]
+        },
+        watch: {
+            msg: function () {
+                console.log("监听msg....");
+            },
+            car: {
+                handler: function () {
+                    console.log("监听car....");
+                },
+                deep: true,
+                immediate: true
+            },
+            arr: function () {
+                console.log("监听arr....");
+            }
+        }
+    });
+</script>
+</body>
+</html>

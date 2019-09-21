@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="动画" id="btn" />
+<div></div>
+
+<script>
+    /*
+    *
+    * 自定义动画函数：animate()
+    * 参数一：需要进行动画样式，对象
+    * 参数二：执行时间
+    * 参数三：执行效果 swing linear
+    * 参数四：回调函数
+    *
+    * 案例：手风琴
+    *
+    * 动画队列及停止动画
+    * 当有多个动画，会一个一个动画的执行，便是动画队列
+    *
+    * 停止动画方法：stop
+    * 参数一：清空动画队列 true false
+    * 参数二：到达动画目标 true false
+    *
+    * 案例：音乐导航栏
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $("#btn").click(function () {
+        $("div").animate({left:800,top:400},500,"swing",function () {
+            console.log("over");
+        });
+    });
+</script>
+</body>
+</html>

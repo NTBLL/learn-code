@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--块级元素：特点：独占一行;可以设置宽高等属性；默认宽为100%；
+    块级元素内部可以放块级元素，行内，行内块元素；除了文本块级元素标签：p,h,div,ul,li,ol-->
+
+    <!--行内元素：特点：一行多个；不能设置宽高属性；默认宽为内容宽；
+    行内元素内部为内容，行内元素，行内块元素；除了a标签；标签：span,s,strong...-->
+
+    <!--行内块元素：特点：块级与行内特点 标签：img,input,td-->
+
+    <!--display属性可以改变元素的显示模式：none,block,inline,inline-block-->
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            display: block;
+        }
+        a{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<span></span><span></span><span></span>
+<a href=""></a><a href=""></a><a href=""></a>
+</body>
+</html>

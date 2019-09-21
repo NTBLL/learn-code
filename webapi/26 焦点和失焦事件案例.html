@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt" />
+
+<script src="js/common.js"></script>
+<script>
+    //设置和获取文本框的值
+    my$("txt").onfocus = function () {
+        this.value = "设置让内容";
+    }
+
+    my$("txt").onblur = function () {
+        alert(this.value);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * innerText和textContent都是用来设置内容的
+    * innerText是IE8提出来的，低版本的火狐浏览器不兼容。
+    * textContent是火狐提出来的，IE8不兼容
+    * 不兼容的属性类型都是undefined类型
+    *
+    *
+    * innerText与innerHTML区别
+    * innerText用于设置文本内容
+    * innerHTML可以设置标签和文本内容
+    *
+    * innerText只能获取标签内部内容
+    * innerHTML可以获取内容和标签
+    *
+    *
+    * */
+</script>
+<p>内容</p>
+<div id="box">
+    div内容
+    <p>段落</p>
+</div>
+<div id="box2">
+    div内容
+    <p>段落</p>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+    var obj = document.getElementsByTagName("p")[0];
+    setTextContent(obj, "兼容性问题");
+
+    console.log(my$("box").innerText);
+    my$("box").innerText = "<p>p</p>";
+
+    console.log(my$("box2").innerHTML);
+    my$("box2").innerHTML = "<p>HTML段落</p>";
+
+</script>
+
+</body>
+</html>

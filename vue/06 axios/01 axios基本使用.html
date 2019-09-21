@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * vue1.0时提供了一个vue-resource的包进行ajax请求，
+    * vue2.0后不再提供，建议使用axios库进行ajax请求
+    *
+    * axios是一个基于promise的HTTP库
+    *
+    * axios发送get请求：axios.get(url).then(fn).catch(fn)
+    *
+    * axios发送post请求：axios.post(url,params).than(fn).catch(fn)
+    *
+    * */
+</script>
+<div id="app">
+
+    <table>
+        <tr>
+            <td>type</td>
+            <td>typeId</td>
+            <td>count</td>
+        </tr>
+        <tr v-for="item in list" :key="item.typeId">
+            <td>{{item.type}}</td>
+            <td>{{item.typeId}}</td>
+            <td>{{item.count}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<script src="../vue.js"></script>
+<script src="../axios.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            list: null
+        },
+        created() {
+            let url1 = "https://www.apiopen.top/findStatistics?appKey=00d91e8e0cca2b76f515926a36db68f5";
+
+            axios.get(url1)
+                .then((res) => {
+                    if (res.data.code == 200) {
+                        this.list = res.data.data;
+                    }
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            let url2 = "https://www.apiopen.top/findStatistics";
+            axios.post(url2,{
+                appKey:"00d91e8e0cca2b76f515926a36db68f5"
+                // withCredentials: true
+            }).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+    });
+</script>
+
+<script>
+
+</script>
+</body>
+</html>

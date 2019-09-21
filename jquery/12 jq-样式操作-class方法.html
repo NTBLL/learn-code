@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .bigger{
+            width: 200px;
+            height: 200px;
+        }
+        .color{
+            background-color: hotpink;
+        }
+        .opacity{
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn1" value="bigger" />
+<input type="button" id="btn2" value="color" />
+<input type="button" id="btn3" value="判断" />
+<input type="button" id="btn4" value="切换" />
+<div id="box"></div>
+
+<script>
+    /*
+    *
+    * class方式操作样式
+    *   添加class:addClass
+    *   移除class:removeClass
+    *   判断class:hasClass
+    *   切换class:toggleClass
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $("#btn1").click(function () {
+        $("#box").addClass("bigger");
+    });
+    $("#btn2").click(function () {
+        $("#box").removeClass("bigger");
+        $("#box").addClass("color");
+    });
+    $("#btn3").click(function () {
+        alert($("#box").hasClass("bigger"));
+    });
+    $("#btn4").click(function () {
+        $("#box").toggleClass("opacity");
+    });
+</script>
+</body>
+</html>

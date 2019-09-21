@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <router-link to="home">首页</router-link>
+    <router-link to="music">音乐</router-link>
+    <router-link to="friend">好友</router-link>
+    <router-view></router-view>
+</div>
+
+
+<script>
+    /*
+    *
+    *
+    * Vue提供了一个插件Vue-Router用于实现单页面应用程序
+    * 路由：就是哈希和组件之间的对应关系
+    *
+    * 使用步骤
+    *   引入Vue和Vue-Router的JS文件
+    *   写哈希对应的组件
+    *   创建并配置Vue-Router
+    *   绑定Vue与VueRouter
+    *   配置路由出口
+    *   配置路由链接
+    *
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script src="../vue-router.js"></script>
+<script>
+    var home = {
+        template: "<h1>这是home中的内容</h1>"
+    };
+    var music = {
+        template: "<h1>这是music中的内容</h1>"
+    };
+    var friend = {
+        template: "<h1>这是friend中的内容</h1>"
+    }
+    var router = new VueRouter({
+        routes: [
+            {path:"",redirect:"/home"},
+            {path:"/home",component:home},
+            {path:"/music",component:music},
+            {path:"/friend",component:friend}
+        ]
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        router:router
+    });
+</script>
+</body>
+</html>

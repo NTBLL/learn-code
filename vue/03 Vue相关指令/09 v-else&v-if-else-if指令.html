@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-if="age < 18">上学</p>
+    <p v-else-if="age == 18">上网</p>
+    <p v-else>泡吧</p>
+</div>
+
+
+<script>
+    /*
+    *
+    * v-else和v-if-else-if指令是配合v-if指令使用如同：if语句一样
+    * 共同设置元素显示与隐藏
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            age: 18
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+    <!--<h1>{{age}}</h1>-->
+    <h1>{{msg.split(" ")}}</h1>
+    <!--<h1>{{for(;;){};}}</h1>-->
+</div>
+<script>
+    /*
+    *
+    * 1.使用VUE步骤
+    *      引入VUEJS文件
+    *      创建VUE对象，并设置el,data属性
+    *       el表示要被VUE控制的内容，data表示数据
+    *      通过插入表达式进行数据和视图渲染
+    *
+    * 2.插入表达式
+    *   {{}} 插入表达式，小胡子，mustache
+    *   作用：获取并展示data中的数据
+    *   注意：只能获取data中已有数据；可以书写表达式；不能写语句；
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "hello vue"
+        }
+    });
+</script>
+</body>
+</html>

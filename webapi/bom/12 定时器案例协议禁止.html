@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="txt" cols="30" rows="10" disabled>
+    面对疾风罗
+    影分身之术
+    哈萨克
+    雷切
+    螺旋丸
+</textarea>
+<br/>
+<input type="button" value="用户协议(5)" id="btn" disabled/>
+
+<script src="../js/common.js"></script>
+<script>
+    var time = 5;
+    var timeId = window.setInterval(function () {
+
+        time--;
+        my$("btn").value = "用户协议(" + time + ")";
+        if (time == 0) {
+            window.clearInterval(timeId);
+            my$("btn").value = "同意";
+            my$("btn").disabled = false;
+        }
+
+    }, 1000);
+</script>
+</body>
+</html>

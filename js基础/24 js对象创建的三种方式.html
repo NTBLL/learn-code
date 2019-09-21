@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 对象创建方式：
+    *   方式一：通过系统提供的构造函数
+    *
+    *   方式二：通过自定义构造函数进行创建
+    *   与普通函数定义方式相同，名称首字母大写
+    *
+    *   方式三：通过字面量方法
+    *   一次性对象
+    *
+    *
+    * 点语法：
+    *   通过对象.方法/属性来对对象属性/方法的赋值和调用
+    *
+    * 在一个对象内部调用属性和方法可以省略对象的名称通过this关键字
+    *
+    * 通过instanceof关键字查看对象属于什么类型
+    *
+    * 创建对象-》new Person()所做的事情
+    *   首先在堆内存中申请了一块空闲空间，创建出对象
+    *   然后将this设置为当前对象
+    *   为对象的属性和方法赋值
+    *   将this返回
+    *
+    * 对象属性和方法访问还可以通过:对象名称["属性/方法"]
+    *
+    *
+    * */
+</script>
+<script>
+    //通过系统提供的构造函数
+    var obj = new Object();
+    obj.name = "zhangsan";
+    obj.eat = function () {
+        console.log("eat")
+    };
+    console.log(obj.name);
+    obj.eat();
+
+    obj.run = function () {
+        console.log(obj.age + ", " + this.name);
+    };
+
+    obj.run();
+
+
+    console.log(obj instanceof Object);
+    console.log(obj instanceof Array);
+
+
+    function createObject(name, age, sex) {
+        var obj = new Object();
+        obj.name = name;
+        obj.sex = sex;
+        obj.age = age;
+        return obj;
+    }
+
+    var obj1 = createObject("zhangsan", 18, "mela");
+    var obj2 = createObject("ls", 20, "femela");
+    console.log(obj1, obj2);
+
+
+    //通过自定构造函数创建对象
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var person = new Person("zs", 18);
+    console.log(person.name, person.age);
+
+
+    //字面量
+    var o = {};
+    o.name = "zhangsan";
+    console.log(o.name);
+
+    o.eat = function(){console.log("eat");};
+
+
+    console.log(o["name"]);
+    o["eat"]();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        #contianer{
+            width: 60%;
+            margin: 50px auto;
+            height: 500px;
+        }
+        .inputs{
+            overflow: hidden;
+        }
+        dl{
+            width: 100%;
+            padding: 8px 30px 0;
+            height: 50px;
+        }
+        dt,dd{
+            float: left;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .inputs input{
+            width: 200px;
+            height: 36px;
+            font-size: 24px;
+            outline: none;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        .inputs button{
+            width: 65px;
+            height: 36px;
+            outline: none;
+        }
+        .info{
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+        }
+        li span{
+
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contianer">
+        <div class="inputs">
+            <dl>
+                <dt>品牌</dt>
+                <dd><input type="text" v-model="brand" /></dd>
+                <dt>描述</dt>
+                <dd><input type="text" v-model="desc"></dd>
+                <dd><button @click="add">添加</button></dd>
+            </dl>
+        </div>
+        <div class="info">
+            <ul>
+                <li>
+                    <span>品牌</span>
+                    <span>描述</span>
+                    <span>操作</span>
+                </li>
+                <li v-for="item in list">
+                    <span>{{item.brand}}</span>
+                    <span>{{item.desc}}</span>
+                    <span><a href="javascript:void(0);" @click.prevent="remove(item.brand)">删除</a></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#contianer",
+            data: {
+                brand: "",
+                desc: "",
+                list: [
+                    {brand:"宝马",desc:"赢了笑嘻嘻"},
+                    {brand:"大话设计模式",desc:"赢了笑嘻嘻"},
+                    {brand:"深入浅出Vue",desc:"赢了笑嘻嘻"}
+                ]
+            },
+            methods: {
+                add: function () {
+                    if(this.brand && this.desc){
+                        let item = {brand:this.brand,desc:this.desc};
+                        this.list.push(item);
+                        this.brand = "";
+                        this.desc = "";
+                    }
+                },
+                remove: function (params) {
+                    this.list.findIndex((e,i) => {
+                        console.log(e);
+                        if(params == e.brand){
+                            this.list.splice(i,1);
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

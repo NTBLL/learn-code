@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="jquery.js"></script>
+<script>
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET", "http://www.lvlin.com:8080/hello");
+    // xhr.send(null);
+    // xhr.onreadystatechange = function () {
+    //     if (this.readyState !== 4) return;
+    //     console.log(this.responseText);
+    // };
+
+    // var img = new Image();
+    // img.src = "http://www.lvlin.com:8080/hello";
+    // document.body.appendChild(img);
+
+    //实现跨域请求
+    // var script = document.createElement("script");
+    // script.src = "http://www.lvlin.com:8080/hello?name=lisi";
+    // document.body.appendChild(script);
+    // function aaa(data) {
+    //     console.log(data);
+    // }
+
+    // $.ajax({
+    //     url:"http://www.lvlin.com:8080/hello",
+    //     dataType:"jsonp",
+    //     success:function (data) {
+    //         console.log(data);
+    //     }
+    // });
+
+    // jsonp("http://www.lvlin.com:8080/hello",{name:"zhangsan"},function (data) {
+    //     console.log(data);
+    // });
+    // function jsonp(url,params,callback){
+    //     params = params || "";
+    //     var funcName = "jsonp_" + Date.now()+ Math.random().toString().substr(2);
+    //
+    //     if (typeof params === "object"){
+    //         var array = [];
+    //         for(var key in params){
+    //             array.push(key + "=" + params[key]);
+    //         }
+    //         params = array.join("&");
+    //     }
+    //
+    //     var script = document.createElement("script");
+    //     script.src = "http://www.lvlin.com:8080/hello?" + params + "&callback=" + funcName;
+    //     document.body.appendChild(script);
+    //
+    //     window[funcName] = function (data) {
+    //         callback(data);
+    //         delete  window[funcName];
+    //         document.body.removeChild(script);
+    //     };
+    //
+    //
+    // }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://www.lvlin.com:8080/data");
+    xhr.send(null);
+    xhr.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+        console.log(this.responseText);
+    };
+
+
+</script>
+</body>
+</html>

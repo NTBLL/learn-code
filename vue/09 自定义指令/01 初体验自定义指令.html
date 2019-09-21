@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-focus />
+</div>
+
+
+<script>
+    /*
+    *
+    * 有时候需要对原生的DOM进行操作，这时候可以通过自定义指令将这些操作进行封装
+    *
+    * 自定义指令通过：Vue.directive(指令名称,{五大钩子函数}),或者directives进行定义
+    * 五大钩子函数
+    *   bind //将指令绑定到元素上
+    *   inserted //绑定元素显示在页面上
+    *   update //数据更新
+    *   componentUpdate //组件全部跟新
+    *   unbind //解除绑定
+    *
+    * 钩子函数中的参数
+    *   el:表示自身对象
+    *   {name //指令名称 rowname //完整指令名称 arg //指令参数 modifiers //指令修饰 value //值 express //data中的属性名称}
+    *
+    *
+    * 主要的两大钩子函数，inserted,update
+    * 若函数中内容相同可以简写为
+    * directives: {指令名称:处理函数}
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    Vue.directive("focus",{
+        inserted: function (el) {
+            el.focus();
+        }
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        }
+    });
+</script>
+</body>
+</html>

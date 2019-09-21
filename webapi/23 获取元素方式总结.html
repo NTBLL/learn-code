@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮" />
+
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+
+<script>
+    document.querySelector("#btn").onclick = function () {
+        var ps = document.querySelectorAll("p");
+        for (var i = 0; i < ps.length; i++) {
+            ps[i].innerText = "H5C3";
+        }
+    }
+</script>
+
+<script>
+    /*
+    *
+    * 通过ID方式：getElementById
+    *
+    * 通过标签名称：getElementsByTagName
+    *
+    * 下面方式有浏览器兼容性问题
+    *
+    * 通过name属性：getElementsByName 一般使用表单标签
+    *
+    * 通过类样式：getElementsByClassName
+    *
+    * H5C3方式：
+    * 单个：querySelector(selector)
+    * 多个：querySelectorAll(selector)
+    *
+    *
+    * */
+</script>
+</body>
+</html>

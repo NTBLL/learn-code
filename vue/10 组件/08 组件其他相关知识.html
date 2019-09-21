@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <son :getmsg="msg" ref="son"></son>
+    <s1>插槽中填充内容</s1>
+    <s1>填充内容2</s1>
+    <s2>
+        <span slot="c1">C1中要填充的内容</span>
+        <span slot="c2">C2中要填充的内容</span>
+    </s2>
+    <s2>
+        <span slot="c1">C1中要填充的内容...........</span>
+        <span slot="c2">C2中要填充的内容...........</span>
+    </s2>
+</div>
+
+
+<script>
+    /*
+    *
+    * 父传递给儿子的值，儿子不要在进行修改***********
+    *
+    * 子组件有一个ref属性，设置了该属性，父组件可以通过$refs属性进行获取*******
+    * //该方式可以直接通过父元素获取到子组件的数据，但是不建议使用；因为子组件数据是变化的
+    *
+    * 当组件中渲染模板内容可以能发生改变时可以使用插槽slot
+    *   单插槽的使用：在template中使用slot标签替代要变化的内容，
+    *   在使用的时候组件标签体内容就会自动填充
+    *
+    *   多插槽的使用：通过slot的name属性给slot进行命名，
+    *   在使用的时候组件标签体内通过slot属性进行给对应的插槽填充数据
+    *
+    * */
+</script>
+
+<script src="../vue.js"></script>
+<script>
+    Vue.component("s1",{
+        template: '<div><p>单插槽使用</p><span><slot></slot></span></div>'
+    });
+    Vue.component("s2",{
+        template: `<div>
+                        <p>多插槽使用--开始</p>
+                        <p><slot name="c1"></slot></p>
+                        <p><slot name="c2"></slot></p>
+                        <p>多插槽使用--结束</p>
+                    </div>`
+    });
+    Vue.component("son",{
+        template: '<button @click="update">{{getmsg}}</button>',
+        props: ["getmsg"],
+        methods: {
+            update(){
+                //Avoid mutating a prop directly
+                this.getmsg = "改变父组件传递的值了！！！";
+            }
+        }
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        mounted(){
+            var son = this.$refs;
+            console.log(son.son);
+        }
+    });
+</script>
+</body>
+</html>

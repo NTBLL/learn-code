@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box2, #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .cls {
+            display: none;
+        }
+
+        .off {
+            background-color: black;
+        }
+    </style>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<input type="button" value="设置DIV" id="btn">
+<div id="box"></div>
+
+<input type="button" value="隐藏" id="btn2">
+<div id="box2"></div>
+
+<input type="button" value="隐藏" id="btn3">
+<div id="box3"></div>
+
+<input type="button" value="关/开灯" id="btn4">
+<script>
+
+    /*
+    *
+    * JS的DOM中两种方式设置样式
+    *   方式一：通过 标签对象.style.属性 = 属性值;
+    *   方式二：通过 标签对象.className = 类样式名称;
+    *
+    *
+    *
+    * */
+
+    //案例点击按钮设置div的宽和高以及背景颜色
+    my$("btn").onclick = function () {
+        my$("box").style.width = "300px";
+        my$("box").style.height = "400px";
+        my$("box").style.backgroundColor = "hotpink";
+    }
+
+    //案例点击按钮显示和隐藏div
+    my$("btn2").onclick = function () {
+        if (this.value == "隐藏") {
+            this.value = "显示";
+            my$("box2").style.display = "none";
+        } else if (this.value == "显示") {
+            this.value = "隐藏";
+            my$("box2").style.display = "block";
+        }
+    }
+
+    //案例点击按钮通过类样式实现显示和隐藏
+    my$("btn3").onclick = function () {
+        if (this.value == "隐藏") {
+            this.value = "显示";
+            my$("box3").className = "cls";
+        } else if (this.value == "显示") {
+            this.value = "隐藏";
+            my$("box3").className = "";
+        }
+    }
+
+    //案例网页开关灯
+    my$("btn4").onclick = function () {
+        if (document.body.className != "off") {
+            document.body.className = "off";
+        } else {
+            document.body.className = "";
+        }
+    }
+</script>
+</body>
+</html>

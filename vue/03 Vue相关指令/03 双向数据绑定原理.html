@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"/>
+<p></p>
+<script>
+    /*
+    *
+    * v->m
+    *   通过input事件，获取实时表单数据，将赋值给m
+    *
+    * m->v
+    *   通过Object.defineProperty(obj,attr,desc)中属性描述的set/get进行完成
+    *
+    *
+    * */
+</script>
+<script>
+    var input = document.querySelector("input");
+    var p = document.querySelector("p");
+    var vm = {
+        msg: "初始内容"
+    };
+    input.oninput = function () {
+        vm.msg = input.value;
+    };
+
+    let temp = input.value;
+    Object.defineProperty(vm, "msg", {
+        get: function () {
+            input.value = temp;
+        },
+        set: function (value) {
+            temp = value;
+            p.innerHTML = temp;
+        }
+    });
+</script>
+<script>
+    //设置属性描述通过Object.defineProperty
+    // Object.defineProperty(vm,"msg",{
+    //     //configurable 是否可配置
+    //     // enumerable 是否可遍历
+    //     // writable 是否可写
+    //     get: function () {
+    //         console.log("get");
+    //     },
+    //     set: function (value) {
+    //         console.log("set");
+    //     }
+    // })
+</script>
+<script>
+    //通过表单中的input事件，该事件表示实时监听input的改变状态而change事件表示离开后
+    // var input = document.querySelector("input");
+    // var p = document.querySelector("p");
+    // input.oninput= function () {
+    //   console.log("input");
+    // };
+    //
+    // input.onchange = function () {
+    //   console.log("change");
+    // };
+</script>
+
+</body>
+</html>

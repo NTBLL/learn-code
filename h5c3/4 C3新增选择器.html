@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--结构选择器：:first-child :last-child :nth-child(n/even/odd)-->
+    <!--属性选择器：[属性] [属性*/^/~/$=属性值]-->
+    <!--伪元素选择器：::before ::after ::selection ::first-letter ::first-line-->
+
+    <style>
+        li{
+            height: 20px;
+            list-style: none;
+            background-color: black;
+        }
+        li:first-child{
+            background-color: orange;
+        }
+        li:last-child{
+            background-color: orange;
+        }
+        li:nth-child(even){
+            background-color: pink;
+        }
+        li:nth-child(odd){
+            background-color: red;
+        }
+        li[class]{
+            background-color: #fafafa;
+        }
+        li[class=xxx]{
+            background-color: #000;
+        }
+        p::first-letter{
+            color: red;
+        }
+        p::first-line{
+            font-size: 24px;
+        }
+        p::before{
+            content: "我是before伪元素";
+            display: block;
+            background-color: pink;
+        }
+        p::after{
+            content: "我是after伪元素";
+            display: block;
+            background-color: pink;
+        }
+        p:before{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<p>
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+    附近的开始啦佛i阿三金佛按时间佛撒酒疯
+
+</p>
+<ul>
+    <li>li</li>
+    <li class="xxx">li</li>
+    <li>li</li>
+    <li class="xxx">li</li>
+    <li>li</li>
+</ul>
+</body>
+</html>

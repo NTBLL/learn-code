@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" @keyup.13="fn" />
+    <input type="text" @keyup.enter="fn" />
+    <input type="text" @keyup.queding="fn" />
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.键盘按下事件中的具体按下那个键通过keycode
+    * 2.vue方便我们便将keycode进行相关了配置如：enter,esc,delete,tab等
+    * 3.若vue提供的补全可以通过自定义的别名：Vue.config.Keycodes.别名 = keycode
+    *
+    * 使用：@keyup.别名/keycode = ""
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    Vue.config.keyCodes.queding = 13;
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        methods: {
+            fn(){
+                console.log("keyup");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

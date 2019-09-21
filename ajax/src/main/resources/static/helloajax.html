@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 1.ajax简介：JS无法完成同时请求和同时接收响应。而AJAX可以单独完成服务器请求和接收
+    * 服务器响应的数据完成网络编程
+    *
+    *
+    * 2.Ajax入门：
+    *   创建请求：new XMLHttpRequest(),open(),send()
+    *   接收响应：onreadystatechange事件,readyState状态,responseText
+    *
+    *
+    * 3.readyState五种状态
+    *   0 表示初始化代理对象
+    *   1 表示与服务器连接
+    *   2 表示已经接收到了响应头
+    *   3 表示正在下载响应体
+    *   4 表示响应结束
+    *
+    *
+    * 4.H5为了简便使用了新的方法onload来替代onreadystatechange，有兼容性问题
+    *
+    *
+    * 5.遵循HTTP协议
+    *   设置请求行 open(method,url)
+    *   设置请求头 setRequestHeader
+    *   设置请求体 send(请求体内容)
+    *   获取响应头 getAllResponseHeaders
+    *   获取响应体 getResponseHeader
+    *   获取响应码 state
+    *   获取响应码对应文字 stateText
+    *
+    *
+    * 6.XMLHttpRequest兼容性，IE5/6不支持
+    * new ActiveXObject("Microsoft.XMLHTTP")
+    *
+    *
+    * */
+</script>
+<script>
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET","hello");
+    // xhr.send(null);
+    // xhr.onreadystatechange = function () {
+    //     if (this.readyState != 4) return;
+    //     console.log(this.responseText);
+    // };
+
+    // var xhr = new XMLHttpRequest();
+    // console.log(xhr.readyState);
+    // xhr.open("GET","hello");
+    // console.log(xhr.readyState);
+    // xhr.send(null);
+    // console.log(xhr.readyState);
+    // xhr.onreadystatechange = function () {
+    //     switch (this.readyState) {
+    //         case 2:
+    //             //console.log(this.responseText);
+    //             console.log(this.getAllResponseHeaders());
+    //             console.log(this.getResponseHeader("date"));
+    //             break;
+    //         case 3:
+    //             //内容太少
+    //             console.log(this.responseText);
+    //             break;
+    //         case 4:
+    //             console.log(this.responseText);
+    //             break;
+    //     }
+    // };
+
+
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET","hello");
+    // xhr.send(null);
+    // xhr.onload = function () {
+    //     console.log(this.readyState);
+    //     console.log(this.responseText);
+    // }
+
+    var xhr = new XMLHttpRequest();
+    // xhr.open("GET","hello");
+    // xhr.send(null);
+    xhr.open("POST","hello");
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhr.send("name=学号");
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+      console.log(this.getAllResponseHeaders());
+      console.log(this.getResponseHeader("Content-Type"));
+      console.log(this.status);
+      console.log(this.statusText);
+      console.log(this.responseText);
+      //console.log(this.responseXML);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    //实现Math对象的max方法
+    function MyMath() {
+        this.myMax = function () {
+            var max = Number.MIN_VALUE;
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        };
+    }
+
+    console.log(new MyMath().myMax(12, 66, 89, 55, 12, 30, 55, 14));
+
+
+    //随机产生一个十六进制数
+    function createColor(){
+        var str = "#";
+        var array = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+
+        for (var i = 0; i < 6; i++) {
+            str += array[parseInt(Math.random()*16)];
+        }
+
+        return str;
+    }
+
+    window.onload = function(){
+      document.getElementById("box").style.backgroundColor = createColor();
+    };
+
+</script>
+
+<div id="box"></div>
+</body>
+</html>

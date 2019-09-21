@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="修改超链接属性" id="btn" />
+<a href="http://www.baidu.com">百度</a>
+
+<script>
+    document.getElementById("btn").onclick = function () {
+        var aObj = document.getElementsByTagName("a")[0];
+        aObj.href = "https://www.jiumodiary.com";
+        aObj.innerText = "鸠摩搜书";
+    };
+</script>
+</body>
+</html>

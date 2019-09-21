@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 1200px;
+            height: 400px;
+            border: 2px solid black;
+            margin: 100px auto;
+        }
+        ul li{
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $.fn.accordion = function(width){
+        width = width || 0;
+        var maxWidth = this.width()-(this.find("li").length-1)*width;
+        var avgWidth = this.width()/this.find("li").length;
+
+        this.find("li").on("mouseenter",function () {
+
+            $(this).stop().animate({width:maxWidth}).siblings().stop().animate({width:width});
+        });
+
+        this.on("mouseleave",function () {
+            $(this).find("li").stop().animate({width:avgWidth});
+        });
+
+    };
+
+    $(function () {
+        var colors = ["yellow","red","orange","pink","blue"];
+        $("ul>li").each(function (index,element) {
+           $(element).css("backgroundColor",colors[index]);
+        });
+
+        $("ul").accordion(100);
+
+    });
+</script>
+</body>
+</html>

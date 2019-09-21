@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 1.break关键字，不仅能在switch-case语句中使用，而且还可以在循环语句中使用
+    *   作用：跳出当前的代码块
+    *
+    *
+    * 2.continue关键字，应用在循环语句中
+    *   作用：跳过当前循环，进入下一次循环
+    *
+    *
+    * */
+</script>
+<script>
+    //break,计算出100-200之间第一个能被7整除的数
+    for(var i = 100; i <= 200; i++){
+        if(i % 7 == 0){
+            console.log(i);
+            break;
+        }
+    }
+
+    //continue,累加1-100之间的和，除了个位数为3的数
+    var sum = 0;
+    for(var i = 1; i <= 100; i++){
+        if(i % 10 == 3){
+            continue;
+        }
+        sum += i;
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

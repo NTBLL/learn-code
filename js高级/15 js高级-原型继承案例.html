@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Animal(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Animal.prototype.eat = function () {
+          console.log("天天只知道吃");
+        };
+        function Dog(weight){
+            this.weight = weight;
+        }
+        Dog.prototype = new Animal("哮天犬",50);
+        Dog.prototype.sleep = function () {
+          console.log("天天只知道睡觉");
+        };
+        function ErHa(color){
+            this.color = color;
+        }
+        ErHa.prototype = new Dog("50Kg");
+        ErHa.prototype.playHost = function () {
+          console.log("二哈天天只知道拆家");
+        };
+        var erHa = new ErHa("white");
+        console.log(erHa.name,erHa.age,erHa.weight,erHa.color);
+        erHa.eat();
+        erHa.sleep();
+        erHa.playHost();
+        console.dir(erHa);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

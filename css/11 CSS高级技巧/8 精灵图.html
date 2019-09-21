@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--精灵图：就是将一张大图包含许多小图，通过background-position方式获取出来-->
+    <!--目的为了减少对服务器的访问次数-->
+
+    <style>
+        div{
+            background-image: url("../images/abcd.jpg");
+            float: left;
+        }
+        .l{
+            width: 96px;
+            height: 113px;
+            background-position: -6px -274px;
+        }
+        .v{
+            width: 108px;
+            height: 114px;
+            background-position: 0 -554px;
+        }
+        .i{
+            width: 65px;
+            height: 113px;
+            background-position: -324px -139px;
+        }
+        .n{
+            width: 118px;
+            height: 116px;
+            background-position: -251px -273px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="l"></div>
+    <div class="v"></div>
+    <div class="l"></div>
+    <div class="i"></div>
+    <div class="n"></div>
+</body>
+</html>

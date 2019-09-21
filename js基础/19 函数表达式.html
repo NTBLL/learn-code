@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 1.匿名函数与命名函数
+    *   匿名函数：没有函数名称
+    *   命名函数：有函数名称
+    *
+    * 2.另一种声明函数方式
+    *   普通声明函数，的函数名是表示函数代码
+    *
+    *   函数表达式：var 变量名 = function (){函数体};
+    *   注意结尾分号不可缺少
+    *
+    *   匿名函数调用
+    *
+    * 3.函数也是一种数据类型
+    *   函数是function数据类型
+    *
+    * 4.函数作为参数使用，可以叫做回调函数
+    *   区分函数作为参数和函数调用的区别
+    *
+    *
+    * 5.函数作为返回值
+    *
+    * */
+</script>
+<script>
+    function f1(){
+        console.log("hahha");
+    }
+    console.log(f1);
+
+    var f2 = function (){
+        console.log("xixixi");
+    };
+    console.log(f2);
+    f2();
+
+    (function(){console.log("eeeee");})();
+
+    console.log(typeof f1);
+
+    function f3(f4){
+        console.log("f3");
+        f4();
+    }
+
+    function f4(){
+        console.log("f4");
+    }
+    f3(f4);
+
+    function f5(){
+        console.log("f5");
+        return function (){
+            console.log("函数返回值！");
+        };
+    }
+
+    var f6 = f5();
+    f6();
+</script>
+</body>
+</html>

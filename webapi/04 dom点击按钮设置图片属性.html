@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="修改图片属性" id="btn">
+<img src="" alt="">
+
+<script>
+    //点击按钮修改图片的资源路径和宽度
+    document.getElementById("btn").onclick = function () {
+      var imgObj = document.getElementsByTagName("img")[0];
+      imgObj.src = "images/4.jpg";
+      imgObj.width = "300";
+    };
+</script>
+</body>
+</html>

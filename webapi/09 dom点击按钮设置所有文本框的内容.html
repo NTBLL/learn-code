@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="设置文本框内容" id="btn" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+
+<script>
+    document.getElementById("btn").onclick = function () {
+      var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].type == "text"){
+                inputs[i].value = "文本框内容";
+            }
+        }
+    };
+</script>
+</body>
+</html>

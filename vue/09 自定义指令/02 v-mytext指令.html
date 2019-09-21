@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-mytext="msg"></p>
+</div>
+
+
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        directives: {
+            mytext: {
+                bind: function (el,binding) {
+                    el.innerText = binding.value;
+                },
+                update: function (el,binding) {
+                    el.innerText = binding.value;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj1 = {
+            name:"zhangsan",
+            age:18,
+            hobby:["swim","play","learn"],
+            dog:{
+                name:"xiaoyang",
+                age:2,
+                color:"yellow"
+            }
+        }
+
+        //浅拷贝
+        var obj2 = {};
+        for(var key in obj1){
+            obj2[key] = obj1[key];
+        }
+        obj2.dog.color="black";
+        console.log(obj1.dog.color);    //black
+        console.log(obj1.dog.color);    //black
+
+        //深拷贝
+        var obj3 = {};
+        function copy(from,to){
+            for(var key in from){
+                var item = from[key];
+                if (item instanceof Array){
+                    to[key]=[];
+                    copy(item,to[key]);
+                } else if (item instanceof  Object){
+                    to[key] = {};
+                    copy(item,to[key]);
+                } else{
+                    to[key]=item;
+                }
+            }
+        }
+        copy(obj1,obj3);
+        obj3.dog.color = "white";
+        console.log(obj3.dog.color);    //white
+        console.log(obj1.dog.color);    //black
+    </script>
+</head>
+<body>
+
+</body>
+</html>

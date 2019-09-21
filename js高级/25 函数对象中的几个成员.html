@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function f(a,b){
+        //函数的实参
+        console.log(f.arguments.length);
+        //函数形参个数
+        console.log(f.length);
+        //函数名称
+        console.log(f.name);
+        //函数的调用者
+        console.log(f.caller);
+    }
+    function f2() {
+        f(1,2,3,4);
+    }
+    f2();
+</script>
+</body>
+</html>

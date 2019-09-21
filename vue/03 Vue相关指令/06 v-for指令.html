@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+        <li v-for="(item,index) in list">
+            {{item}}--------{{index}}
+        </li>
+        <li v-for="(e,k,i) in car">
+            {{e}}----{{k}}----{{i}}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="item in listCar" :key="item.brand">
+            <input type="checkbox" />
+            {{item.brand}}
+        </li>
+    </ul>
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.v-for指令
+    *   用于渲染一组数据
+    *
+    *   使用格式：
+    *   v-for="item in list"
+    *   v-for="(item,index) in list"
+    *   v-for="(item,key,index) in list"
+    *
+    * 2.注意问题--就地复用原则
+    *   在有临时状态可以改变的元素中，会出现问题，这时候需要通过key元素进行解决
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            list: ["张三","李四","王五","赵六"],
+            car: {
+                brand: "宝马",
+                price: "1999999",
+                decs: "宁可坐在宝马上哭"
+            },
+            listCar: [
+                {brand: "宝马", price: "1999999", decs: "宁可坐在宝马上哭"},
+                {brand: "法拉利", price: "1999999", decs: "宁可坐在宝马上哭"},
+                {brand: "五菱宏光", price: "1999999", decs: "宁可坐在宝马上哭"}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

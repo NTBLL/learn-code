@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: green;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="400px" id="btn1"/>
+<input type="button" value="800px" id="btn2"/>
+<div id="box"></div>
+<script src="js/common.js"></script>
+<script>
+    my$("btn1").onclick = function () {
+        animate(my$("box"), 400);
+    };
+    my$("btn2").onclick = function () {
+        animate(my$("box"), 800);
+    };
+
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = Math.ceil(Math.abs(target - current) / 10);
+            step = target - current > 0 ? step : -step;
+            if (current == target) {
+                clearInterval(element.timeId);
+            }
+            element.style.left = current + step + "px";
+            console.log("目标："+target+",当前："+current+",步数："+step);
+        }, 20);
+    }
+</script>
+</body>
+</html>

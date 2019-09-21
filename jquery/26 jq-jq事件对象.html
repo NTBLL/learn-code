@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="http://www.baidu.com">百度</a>
+</div>
+
+<script>
+    /*
+    *
+    *
+    * //阻止事件冒泡
+    * event.stopPropagation
+    * //阻止浏览器默认行为
+    * event.preventDefault
+    * //阻止事件冒泡&阻止浏览器默认行为
+    * return false
+    *
+    * //事件绑定时传入的数据
+    * event.data
+    * //键盘对应的编码
+    * event.keyCode
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("div").on("click",function (e) {
+            console.log("div");
+
+        });
+        $("a").on("click",function (e) {
+            console.log("a");
+            // e.preventDefault();
+            // e.stopPropagation();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

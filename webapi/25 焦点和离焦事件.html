@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            color:grey;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="请输入内容" id="txt" />
+
+<script src="js/common.js"></script>
+<script>
+    /*
+    *
+    * 鼠标聚焦和失焦事件：onfocus,onblur
+    *
+    *
+    * */
+
+    //案例模拟搜索框
+    my$("txt").onfocus = function () {
+        if (this.value == "请输入内容") {
+            this.value = "";
+        }
+    };
+
+    my$("txt").onblur = function () {
+      if (this.value.length == 0){
+          this.value = "请输入内容";
+      }
+    };
+</script>
+</body>
+</html>

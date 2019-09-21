@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="解除绑定与触发" />
+<div style="width: 100px;height: 100px;background-color: pink;"></div>
+<script>
+    /*
+    *
+    * 解除事件绑定方法
+    * bind对应unbind
+    * delegate对应undelegate
+    *
+    * on对应off
+    * off(事件类型字符串)  删除指定事件
+    * off() 删除所有事件
+    *
+    * 触发事件
+    * 事件类型方法
+    * 通过trigger方法
+    *
+    *
+    * */
+</script>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $("div").on("click",function () {
+        $(this).css("backgroundColor","red");
+    });
+    $("div").on("mouseenter",function () {
+        $(this).css("backgroundColor","yellow");
+    });
+
+    $("input").on("click",function () {
+        $("div").off("click");
+        $("div").trigger("mouseenter");
+    });
+
+
+</script>
+</body>
+</html>

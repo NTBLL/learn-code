@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 自定义属性：在标签内部添加自己命名的属性，通过DOM点操作无法获取
+    * 需要通过getAttribute(属性名称)
+    * 通过动态设置自定义属性可以通过setAttribute(属性名称，属性值)
+    * 可以通过removeAttribute方法移除自定义属性和系统的属性
+    *
+    *
+    *
+    * */
+</script>
+<div id="box" score="10" class="pink">
+</div>
+<script>
+    console.log(document.getElementById("box").getAttribute("score"));
+
+    document.getElementById("box").setAttribute("age", 20);
+
+    document.getElementById("box").removeAttribute("score");
+    document.getElementById("box").removeAttribute("class");
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    *1.JS中原始数据类型
+    *   number：数字类型，包括整数和小数
+    *   string：字符串类型，值是通过双引号或单引号括起来
+    *   boolean：布尔类型，取值true,false
+    *   null：空类型，取值null
+    *   undefined：未定义，取值undefined
+    *   object：对象
+    *
+    *
+    * 2.JS获取变量数据类型方式：通过typeof完成
+    *
+    *
+    * 3.number类型
+    *   整数类型的八进制，十进制，十六进制的表示
+    *   数字类型的范围：Number.MAX_VALUE,Number.MIN_VALUE
+    *   无穷表示方法：Infinity,-Infinity
+    *
+    *   不要通过小数判断小数
+    *   不要通过NaN判断是否为NaN
+    *   通过isNaN判断是不是不是一个数字
+    *
+    *
+    * 4.string类型
+    *   字符串类型，通过双引号或者单引号包括起来
+    *   通过length属性来计算字符串长度
+    *   转译字符，制表，退格。。。
+    *   字符串可以通过加号进行连接操作
+    *   数字字符串和数字进行除了加号操作都会进行运算，浏览器进行了隐士转换
+    *
+    * 5.boolean类型
+    *   取值只有true,false
+    *
+    * 6.undefined类型
+    *   取值只有undefined,变量未赋值，函数没有确定返回值
+    *
+    * 7.null类型
+    *   取值只有null,并且只有手动赋值
+    *
+    * */
+</script>
+<script>
+    var num = 10;
+    var str = "zhangsan";
+    var bool = true;
+    var nll = null;
+    var undef = undefined;
+    var obj = new Object();
+
+    console.log(typeof num);
+    console.log(typeof str);
+    console.log(typeof bool);
+    console.log(typeof undef);
+    console.log(String(nll));
+    console.log(typeof(obj));
+</script>
+<script>
+    var number1 = 012;
+    var number2 = 10;
+    var number3 = 0xa;
+    console.log(number1, number2, number3);
+    console.log(Number.MAX_VALUE, Number.MIN_VALUE);
+    console.log(Infinity,-Infinity);
+
+    console.log((0.1 + 0.2) == 0.3);
+    console.log(NaN == (undefined + 10));
+    console.log(isNaN(undefined + 10));
+</script>
+<script>
+    var str1 = "20";
+    var n = 10;
+    console.log(str1.length);
+    console.log(str1 + n);
+    console.log(str1 * n);
+    console.log("哈哈哈\t哈哈\b");
+</script>
+</body>
+</html>

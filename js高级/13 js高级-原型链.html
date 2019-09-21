@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dv"></div>
+<script>
+    /*
+    *
+    *
+    * 原型链：实例对象与原型对象之间关系，实例对象通过__proto__原型来联系
+    *
+    * 原型对象可以改变，若改变则要注意要添加原型方法或属性要在原型对象改变后
+    *
+    * 实例对象的__proto__最终指向的是Object的__proto__是null
+    *
+    *
+    * */
+</script>
+<script>
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // function Student(name){
+    //     this.name = name;
+    // }
+    // var person = new Person("zs",18);
+    // console.dir(Person);
+    // console.dir(person);
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.sleep = function () {
+      console.log("sleep");
+    };
+    function Student(name){
+        this.name = name;
+    }
+    // Student.prototype.study = function () {
+    //   console.log("study");
+    // };
+    Student.prototype = new Person("zs",18);
+    Student.prototype.study = function () {
+        console.log("study");
+    };
+    var student = new Student();
+    student.study();
+    student.sleep();
+
+    console.dir(document.getElementById("dv"));
+</script>
+</body>
+</html>

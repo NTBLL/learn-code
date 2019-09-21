@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 300px;
+            border: 1px solid purple;
+            overflow: auto; /*超过边界就生成滚轮*/
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <!--内容-->
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+    <p>测试测试测试测试测试</p><p>测试测试测试测试测试</p>
+
+</div>
+<script src="js/common.js"></script>
+<script>
+    /*
+    *
+    * scrollWidth/Height：文本内容的宽和高
+    * 当没有文本或者文本没有超过元素的宽和高就默认为元素的宽和高
+    * 超过了元素的宽或者高就以实际宽和高为准
+    *
+    * scrollTop/Left：文本上卷或者左卷的距离
+    *
+    * scroll事件，当滚轮滚动就触发
+    *
+    * */
+
+    console.log(my$("box").scrollWidth);
+    console.log(my$("box").scrollHeight);
+    my$("box").onscroll = function(){
+        console.log(my$("box").scrollTop);  //234   534
+    };
+
+</script>
+</body>
+</html>

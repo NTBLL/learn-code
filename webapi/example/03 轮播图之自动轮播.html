@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /*取消图片底部3像素距离*/
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            border: 1px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box ul li {
+            float: left;
+        }
+
+        .box ul {
+            width: 1500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="screen">
+    <ul>
+        <li><img src="imagess/01(1).jpg" alt=""/></li>
+        <li><img src="imagess/02.jpg" alt=""/></li>
+        <li><img src="imagess/03.jpg" alt=""/></li>
+        <li><img src="imagess/04.jpg" alt=""/></li>
+        <li><img src="imagess/01(1).jpg" alt=""/></li>
+    </ul>
+</div>
+<script src="../js/common.js"></script>
+<script>
+    var box = my$("screen");
+
+    var ulObj = box.children[0];
+    var imgWidth = ulObj.offsetWidth;
+    var lis = ulObj.getElementsByTagName("li");
+
+    var index = 0;
+    var timeId = setInterval(function () {
+        console.log(index,lis.length);
+        if (index > (lis.length - 1)) {
+            console.log(index);
+            ulObj.style.left = "0";
+            index = 0;
+        }
+        index++;
+        animate(ulObj, -imgWidth * index);
+
+    }, 2000);
+
+    box.onmouseover = function () {
+        clearInterval(timeId);
+    };
+
+    box.onmouseout = function () {
+        timeId = setInterval(function () {
+            if (index > lis.length - 1) {
+                ulObj.style.left = "0px";
+                index = 0;
+            }
+            index++;
+            animate(ulObj, -imgWidth * index);
+
+        }, 2000);
+    };
+
+
+    //移动元素
+    function animate(element, target) {
+        if (!element.timeId) {
+            element.timeId = setInterval(function () {
+                var current = element.offsetLeft;
+                var step = 10;
+                step = current < target ? step : -step;
+                if (Math.abs(current - target) > Math.abs(step)) {
+                    element.style.left = current + step + "px";
+                } else {
+                    clearInterval(element.timeId);
+                    delete element.timeId;
+                    element.style.left = target + "px";
+                }
+            }, 10);
+        }
+
+    }
+</script>
+
+</body>
+</html>

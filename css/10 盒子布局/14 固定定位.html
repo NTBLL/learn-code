@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--固定定位：fixed-->
+    <!--固定定位：不会占有原来的位置；是根据浏览器窗口偏移-->
+
+    <!--绝对定位和相对定位也会隐式改变元素的显示模式为行内块-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .top{
+            width: 100%;
+            height: 44px;
+            background: url("../images/top.png") no-repeat top center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .main{
+            width: 1002px;
+            margin: 44px auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="main">
+        <img src="../images/box.png" alt="">
+    </div>
+</body>
+</html>

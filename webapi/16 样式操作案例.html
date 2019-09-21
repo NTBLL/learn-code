@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="禁用文本框" id="btn1" />
+<input type="text" id="txt" />
+
+<br />
+
+<input type="button" value="改变列表颜色" id="btn2" />
+<ul id="ul1">
+    <li>鸣人</li>
+    <li>自来也</li>
+    <li>卡卡西</li>
+    <li>佐助</li>
+</ul>
+
+<script>
+    //点击按钮禁用文本框和改变列表背景色
+    document.getElementById("btn1").onclick = function () {
+        document.getElementById("txt").disabled = true;
+    }
+
+    document.getElementById("btn2").onclick = function () {
+        document.getElementById("ul1").style.backgroundColor = "hotpink";
+    }
+</script>
+</body>
+</html>

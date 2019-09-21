@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--C3动画：定义动画 使用动画-->
+    <!--使用动画-->
+    <!--animation:动画名称 执行时间 匀速/变速 停止时间 执行次数 来回执行；-->
+    <!--定义动画-->
+    <!--@keyframes 动画名称{阶段{css} }  阶段可以to-from 也可以是百分比-->
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            animation: myAnimation 2s linear 5s infinite alternate;
+        }
+
+        @keyframes myAnimation {
+            /*from{*/
+                /*background-color: black;*/
+            /*}*/
+            /*to{*/
+                /*background-color: white;*/
+            /*}*/
+
+            0%{
+                background-color: #000000;
+                margin-top: 100px;
+            }
+
+            50%{
+                background-color: red;
+                margin-top: 200px;
+            }
+
+            100%{
+                background-color: #fff;
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

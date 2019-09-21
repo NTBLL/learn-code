@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="#/home">首页</a>
+<a href="#/music">音乐</a>
+<a href="#/friend">好友</a>
+<p></p>
+
+<script>
+    /*
+    *
+    * 单页面应用程序：SPA
+    *   优点：请求体积减少，响应速度块；用户体验号
+    *
+    * Vue-Router实现单页面应用的原理
+    *   通过锚点：也就是路由
+    *   通过锚点的改变监听事件：hashchange
+    *   通过锚点值来获取后台的请求：location.hash
+    *
+    *
+    * */
+</script>
+<script src="../axios.js"></script>
+<script>
+    function fn() {
+        var hash = location.hash.split("#")[1];
+        if (hash === "/home" || hash === undefined) {
+            axios({url: "home.json", method: "GET"})
+                .then(function (res) {
+                    document.querySelector("p").innerHTML = res.data.content;
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        } else if (hash === "/music") {
+            axios({url: "music.json", method: "GET"})
+                .then(function (res) {
+                    document.querySelector("p").innerHTML = res.data.content;
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        } else if (hash === "/friend") {
+            axios({url: "friend.json", method: "GET"})
+                .then(function (res) {
+                    document.querySelector("p").innerHTML = res.data.content;
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        } else {
+            console.log("后台没有提供对应的接口，sorry!!!");
+        }
+    }
+    fn();
+    window.addEventListener("hashchange", fn, false)
+</script>
+</body>
+</html>

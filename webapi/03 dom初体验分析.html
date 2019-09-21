@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 事件：事件源，触发，响应
+        *
+        * */
+
+        //等待页面加载完毕后执行
+        window.onload = function(){
+            //获取id为btn的按钮对象
+            var btnObj = document.getElementById("btn");
+            //为id为btn的按钮注册点击事件
+            btnObj.onclick = function () {
+                alert("弹框");
+            };
+        };
+
+    </script>
+</head>
+<body>
+<input type="button" value="弹框" id="btn">
+</body>
+</html>

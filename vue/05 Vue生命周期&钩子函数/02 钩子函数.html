@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{msg}}</p>
+</div>
+
+<script>
+    /*
+    *
+    * 钩子函数是Vue是生命周期的一部分；
+    * 钩子函数是在Vue特定的生命周期中进行调用的函数。
+    *
+    * 初始化数据前后
+    * beforeCreate
+    * created----->此时一般用于ajax数据请求
+    *
+    * 初次进行数据解析前后
+    * beforeMount
+    * mounted----->此时一般用于dom操作
+    *
+    * 数据修改后在此解析前后
+    * beforeUpdate
+    * updated
+    *
+    * Vue实例对象销毁前后
+    * beforeDestroy
+    * destroyed
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        beforeCreate(){
+            console.warn("初始化前");
+            console.log(this.msg);
+        },
+        created(){
+            console.warn("初始化后");
+            console.log(this.msg);
+        },
+        beforeMount(){
+            console.warn("初次解析前");
+            console.log(document.getElementsByTagName("p")[0]);
+        },
+        mounted(){
+            console.warn("初次解析后");
+            console.log(document.getElementsByTagName("p")[0]);
+        },
+        beforeUpdate(){
+            console.warn("数据更新后，解析前");
+            console.log(document.getElementsByTagName("p")[0]);
+        },
+        updated(){
+            console.warn("数据更新后，解析后");
+            console.log(document.getElementsByTagName("p")[0]);
+        },
+        beforeDestroy(){
+            console.warn("销毁前");
+        },
+        destroyed(){
+            console.warn("销毁后");
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 实例对象调用属性或者方法，优先调用自身的，若自身没有就调用原型对象的
+    *
+    * */
+</script>
+<script>
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+        this.eat = function () {
+            console.log("eat");
+        };
+    }
+
+    Person.prototype.sex = "zs";
+
+    var p = new Person("ls",20);
+    console.log(p.name);
+    console.log(p.sex);
+</script>
+</body>
+</html>

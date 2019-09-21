@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+    <demo></demo>
+    <demo></demo>
+    <demo></demo>
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.组件好处
+    * 组件可以重复使用，提高代码的重用性和可维护性
+    *
+    *
+    * 2.组件的定义
+    * 全局组件定义：Vue.component(组件名称，组件相关配置)
+    * 局部组件定义：components: {组件名称：组件相关配置.....}
+    *
+    *
+    * 3.组件配置问题
+    * 组件必须要有template属性且要有一个跟标签
+    * 组件的属性配置与Vue配置一样即可
+    * 组件中的data必须是一个函数，函数的返回值是一个带有数据的对象---》保证每一个组件实例拥有唯一的数据
+    *
+    * 4.es6的模板字符串
+    *   优点：可以保留字符串中的空格和换行；拼接字符串更方便
+    *   `我的名字叫${name}`
+    *
+    *
+    * 5.组件是封闭的，不能进行数据共享操作
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    var obj = {count:0};
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        components: {
+            hello: {
+                template: "<h1>组件哦!</h1>"
+            },
+            demo: {
+                template: `<div>
+                                <button @click="add">按钮点击次数{{count}}</button>
+                            </div>`,
+                data: function () {
+                    // return {count:0};
+                    return obj;
+                },
+                methods: {
+                    add: function () {
+                        this.count++;
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

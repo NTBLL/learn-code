@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        1.变量：用于表示内存空间，方便操作数据
+
+        2.变量声明：通过var关键字
+
+        3.变量初始化：通过=进行赋值
+
+        4.变量命名规范
+            由数字，字母，下划线，美元符号组成
+            不能以数字开头
+            不能是关键字
+
+        5.声明并初始化多个变量：通过逗号隔开
+
+        6.交换两个变量的值
+            方式一：通过变量
+            方式二：通过加减法
+            方式三：通过位运算
+     */
+</script>
+<script>
+    //变量的定义并初始化
+    var num = 10;
+    console.log(num);
+
+    //多个变量的声明并初始化
+    var x, y;
+    x = 20;
+    y = 30;
+    console.log(x, y);
+
+    //交换两个变量值方式一
+    var m = 1, n = 2;
+    var temp;
+    temp = m;
+    m = n;
+    n = temp;
+    console.log(m, n);
+
+    //交换两个变量值方式二
+    m = m + n;
+    n = m - n;
+    m = m - n;
+    console.log(m, n);
+
+    //交换连个变量方式三
+    m = m ^ n;  //异或
+    n = m ^ n;
+    m = m ^ n;
+    console.log(m, n);
+
+
+</script>
+</body>
+</html>

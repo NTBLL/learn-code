@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="按钮"/>
+<div id="box"></div>
+
+<script src="js/common.js"></script>
+<script>
+    my$("btn").onclick = function () {
+        var names = [
+            {name: "百度", href: "http://www.baidu.com"},
+            {name: "谷歌", href: "http://www.baidu1.com"},
+            {name: "搜狗", href: "http://www.baidu2.com"},
+            {name: "鸠摩", href: "http://www.baidu3.com"}
+        ];
+
+        var tableObj = document.createElement("table");
+        tableObj.border = "1";
+        tableObj.cellSpacing = "0";
+        tableObj.cellPadding = "0";
+
+        my$("box").appendChild(tableObj);
+
+
+
+
+        for (var i = 0; i < names.length; i++) {
+            var trObj = document.createElement("tr");
+            tableObj.appendChild(trObj);
+            var tdObj01 = document.createElement("td");
+            setTextContent(tdObj01,names[i].name);
+            var tdObj02 = document.createElement("td");
+            tdObj02.innerHTML = "<a href="+names[i].href+">"+names[i].name+"</a>"
+            trObj.appendChild(tdObj01);
+            trObj.appendChild(tdObj02);
+        }
+
+    };
+</script>
+</body>
+</html>

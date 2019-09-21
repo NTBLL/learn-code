@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="弹框" onclick="alert('弹框了!')" />
+
+<input type="button" value="弹框" id="btn" />
+
+<script>
+    document.getElementById("btn").onclick = function () {
+      alert("弹框");
+    };
+</script>
+</body>
+</html>

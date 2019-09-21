@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var xhr = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open("get","data");
+    xhr.send(null);
+    //xhr.responseType = "json";
+    xhr.onreadystatechange = function () {
+      if (this.readyState !== 4) return;
+      //console.log(this.responseText);
+        console.log(this.response);
+        console.log(this.responseType);
+    };
+</script>
+</body>
+</html>

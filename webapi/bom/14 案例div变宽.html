@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="变宽">
+<div id="box"></div>
+
+<script src="../js/common.js"></script>
+<script>
+    /*
+    *
+    * 在DOM中获取style标签内中的属性值，只能通过offsetWidth,只能对高，宽,left,top
+    * 而在style属性中可以通过原有的方式
+    *
+    * */
+    var timeId = "";
+    //console.log(my$("box").offsetWidth);
+    my$("btn").onclick = function () {
+        if (!timeId) {
+            timeId = setInterval(function () {
+
+                if (my$("box").offsetWidth < 1000) {
+                    my$("box").style.width = my$("box").offsetWidth + 10 + "px";
+
+                } else {
+                    clearInterval(timeId);
+                    timeId = "";
+                }
+
+            }, 100);
+        }
+    };
+</script>
+</body>
+</html>

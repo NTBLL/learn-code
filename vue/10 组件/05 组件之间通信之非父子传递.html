@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <jack></jack>
+    <rose></rose>
+</div>
+
+
+<script>
+    /*
+    *
+    * 首先定一个Vue实例，不需要进行配置；
+    * 在接收数据的一方，一般在created钩子函数中绑定一个事件，通过事件总线的方式
+    * 在发送数据的一方，通过调用函数的方法，将要传递的数据传递过去
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    var bus = new Vue();
+    Vue.component("jack",{
+        template: `<div>jack对rose说<input type="text" v-model="msg" @keyup.enter="send" /> </div>`,
+        data(){
+            return {msg:""}
+        },
+        methods: {
+            send: function () {
+                bus.$emit("getMsg", this.msg);
+            }
+        }
+    });
+
+    Vue.component("rose", {
+        template: `<div>rose接受到jack说了{{msg}}</div>`,
+        created: function () {
+            bus.$on("getMsg", (res) => {
+                this.msg = res;
+            });
+        },
+        data: function () {
+            return {msg:""}
+        }
+    });
+
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        }
+    });
+</script>
+</body>
+</html>

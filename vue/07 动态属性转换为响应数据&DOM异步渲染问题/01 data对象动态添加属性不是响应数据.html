@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <p>{{car.desc}}</p>
+    <button @click="add">动态添加对象属性</button>
+</div>
+
+<script>
+    /*
+    *
+    * 在VUE中动态创建的数据不是响应式数据，需要手动通过
+    * vm实例方法$set进行设置为响应式数据
+    * 与Vue的set方法等效
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            car: {
+                brand: "五菱宏光",
+                price: 19999
+            }
+        },
+        methods: {
+            add: function () {
+                this.$set(this.car,"desc","秋明山车神");
+                //Vue.set(this.car,"desc","秋明山车神");
+
+                //this.car.desc = "秋名山车神";
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn1"/>
+<input type="button" value="解绑btn1的事件" id="btn2"/>
+
+<script src="js/common.js"></script>
+<script>
+    //解除事件的三种方式：通过什么方式绑定就用什么方式解除
+
+    //方式一
+    // my$("btn1").onclick = function () {
+    //   console.log("xixii");
+    // };
+    // my$("btn2").onclick = function () {
+    //   my$("btn1").onclick = null;
+    // };
+
+    //方式二
+    // function f1() {
+    //     console.log("hahha");
+    // }
+    //
+    // my$("btn1").addEventListener("click", f1, false);
+    // my$("btn2").onclick = function () {
+    //     my$("btn1").removeEventListener("click", f1, false);
+    // };
+
+    //方式三
+
+    // function f1() {
+    //     console.log("hehehhe");
+    // }
+    //
+    // my$("btn1").attachEvent("onclick", f1);
+    //
+    // my$("btn2").onclick = function () {
+    //     my$("btn1").detachEvent("onclick", f1);
+    // };
+</script>
+</body>
+</html>

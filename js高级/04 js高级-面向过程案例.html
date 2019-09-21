@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="dv"></div>
+
+<script>
+    /*
+    *
+    * 原型方法中使用this表示当前对象
+    *
+    * */
+</script>
+<script>
+    //点击按钮修该DIV属性
+    //面向过程方法
+    // document.getElementById("btn").onclick = function () {
+    //   document.getElementById("dv").style.backgroundColor = "yellow";
+    // };
+
+    //面向对象一
+    // function ChangeStyle(btnId,divId,color){
+    //     this.btnObj = document.getElementById(btnId);
+    //     this.divObj = document.getElementById(divId);
+    //     this.color = color;
+    // }
+    //
+    // ChangeStyle.prototype.changeStyle = function () {
+    //     var divObj = this.divObj;
+    //     var color =this.color;
+    //     this.btnObj.onclick = function () {
+    //         divObj.style.backgroundColor = color;
+    //     };
+    // };
+    //
+    // var c1 = new ChangeStyle("btn","dv","purple");
+    // c1.changeStyle();
+
+    //面向对象二
+    function ChangeStyle(btnObj, divObj, json) {
+        this.btnObj = btnObj;
+        this.divObj = divObj;
+        this.json = json;
+    }
+
+    ChangeStyle.prototype.changeStyle = function () {
+        var json = this.json;
+        var divObj = this.divObj;
+        this.btnObj.onclick = function () {
+            for (var key in json) {
+                divObj.style[key] = json[key];
+            }
+        };
+    }
+
+    var c1 = new ChangeStyle(document.getElementById("btn"),document.getElementById("dv"),
+        {"width":"300px","height":"300px","opacity":"0.2"});
+    c1.changeStyle();
+
+</script>
+</body>
+</html>

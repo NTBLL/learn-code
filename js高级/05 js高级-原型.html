@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 实例对象中的__proto__属性，是一个原型对象，是浏览器的，不是标准属性--IE8不支持
+    * 构造函数中的prototype属性，是一个原型对象，是程序员使用的，是标准属性
+    * 原型就是：__proto__或者prototype，这两种是全等的
+    *
+    *
+    * */
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    var p1 = new Person("zs",18);
+    var p2 = new Person("ls",19);
+    console.log(Person.prototype === p1.__proto__);
+    console.dir(Person);
+    console.dir(p1);
+    console.dir(p2);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--C3伸缩布局，flex-->
+    <!--给父元素设置display:flex-->
+    <!--子元素可以对行或列进行等比例获取：flex-decortion:column/row 默认是row-->
+    <!--子元素通过flex:n来获取多少等份，n表示份数-->
+    <!--可以设置最小最大宽高：min-width/max-height-->
+
+    <style>
+        section{
+            height: 150px;
+            width: 80%;
+            margin: 100px auto;
+            display: flex;
+            background-color: black;
+            min-width: 500px;
+            max-width: 960px;
+            /*flex-direction: row;*/
+            flex-direction: column;
+        }
+        div{
+            flex: 1;
+            /*height: 150px;*/
+        }
+        div:nth-child(1){
+            background-color: red;
+        }
+        div:nth-child(2){
+            background-color: green;
+        }
+        div:nth-child(3){
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>

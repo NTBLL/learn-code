@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="按钮"/>
+<div id="box">
+    <!--<input type="button" id="btn2" value="按钮"/>-->
+</div>
+
+<script src="js/common.js"></script>
+<script>
+    //只添加一个元素
+    my$("btn").onclick = function () {
+        var btn2 = document.createElement("input");
+        btn2.id = "btn2";
+        btn2.value = "btn2";
+        btn2.type = "button";
+
+        if(!my$("btn2")){
+            my$("box").appendChild(btn2);
+        }
+
+        // if(my$("btn2")){
+        //     my$("box").removeChild(my$("btn2"));
+        // }
+        //
+        // my$("box").appendChild(btn2);
+    };
+
+
+    //尾部追加
+    // var i = 0;
+    // my$("btn").onclick = function () {
+    //   var btn2 = document.createElement("input");
+    //   btn2.type = "button";
+    //   btn2.value = i++;
+    //   my$("box").appendChild(btn2);
+    // };
+
+    //插入
+    // var i = 0;
+    // my$("btn").onclick = function () {
+    //     var btn2 = document.createElement("input");
+    //     btn2.type = "button";
+    //     btn2.value = i++;
+    //     my$("box").insertBefore(btn2, my$("btn2"));
+    // };
+
+    //替换
+    // var i = 0;
+    // my$("btn").onclick = function () {
+    //     var btn2 = document.createElement("input");
+    //     btn2.type = "button";
+    //     btn2.value = i++;
+    //     my$("box").replaceChild(btn2, my$("box").getElementsByTagName("input")[0]);
+    // };
+
+    //删除
+    // my$("btn").onclick = function () {
+    //
+    //     my$("box").removeChild(my$("btn2"));
+    // };
+
+</script>
+</body>
+</html>

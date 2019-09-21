@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<script>
+    /*
+    *
+    * 一次性定时器：setTimeout
+    *
+    * */
+    var timeId = window.setTimeout(function () {
+        alert("haha");
+    },1000);
+
+    document.getElementById("btn").onclick = function () {
+        window.clearTimeout(timeId);
+    };
+</script>
+</body>
+</html>

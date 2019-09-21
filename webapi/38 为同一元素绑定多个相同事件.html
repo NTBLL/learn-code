@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+
+<script src="js/common.js"></script>
+<script>
+    //后面的会覆盖前面的事件
+    // my$("btn").onclick = function () {
+    //     console.log("嘻嘻嘻嘻");
+    // };
+    // my$("btn").onclick = function () {
+    //     console.log("哈哈哈哈");
+    // };
+    // my$("btn").onclick = function () {
+    //     console.log("呵呵呵呵");
+    // }
+
+    //IE8不支持 一个按钮绑定多个相同的事件
+    // my$("btn").addEventListener("click", function () {
+    //     console.log("嘻嘻嘻嘻");
+    // }, false);
+    // my$("btn").addEventListener("click", function () {
+    //     console.log("呵呵呵呵");
+    // }, false);
+    // my$("btn").addEventListener("click", function () {
+    //     console.log("哈哈哈哈");
+    // }, false);
+
+    //IE8支持，火狐，谷歌不支持
+    // my$("btn").attachEvent("onclick", function () {
+    //     console.log("嘻嘻嘻嘻");
+    // });
+    // my$("btn").attachEvent("onclick", function () {
+    //     console.log("呵呵呵呵");
+    // });
+    // my$("btn").attachEvent("onclick", function () {
+    //     console.log("哈哈哈哈");
+    // });
+
+
+    //兼容性代码
+    // function addEventListener(element, type, dosomething) {
+    //     if (element.attcheEvent) {
+    //         element.attacheEvent("on" + type, dosomething);
+    //     } else if (element.addEventListener) {
+    //         element.addEventListener(type, dosomething, false);
+    //     }
+    // }
+
+
+
+    myAddEventListener(my$("btn"),"click",function () {
+        console.log("哈哈哈哈");
+    });
+    myAddEventListener(my$("btn"),"click",function () {
+        console.log("呵呵呵呵");
+    });
+    myAddEventListener(my$("btn"),"click",function () {
+        console.log("嘻嘻嘻嘻");
+    });
+
+</script>
+</body>
+</html>

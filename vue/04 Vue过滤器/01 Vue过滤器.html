@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <p>{{msg | myFilter}}</p>
+    <p>{{msg | myFilter | myFilter2}}</p>
+    <p>{{msg | innerFilter(12.9999)}}</p>
+    <p>{{date | dateFilter("YYYY-MM-DD")}}</p>
+    <p>{{date | dateFilter("HH:mm:ss")}}</p>
+    <p>{{date | dateFilter}}</p>
+</div>
+
+<script>
+    /*
+    *
+    * vue过滤器：用于格式化文本信息：如数字，日期等。。。
+    *
+    * 基本使用：
+    * 定义过滤器：Vue.filter(过滤器名称,文本处理函数)
+    * 使用过滤器：{{文本值 | 过滤器名称}}
+    *
+    *
+    * 同时使用多个过滤器：{{msg | f1 | f2}}
+    * 使用过滤器并传入参数：{{msg | fn(参数)}}
+    *
+    * 全局过滤器：所有的vue实例可以使用：Vue.filter()
+    * 局部过滤器：指定的vue实例可以使用：new Vue({...filters:{}}})
+    *
+    *
+    * --moment日期时间插件
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script src="../moment.js"></script>
+<script>
+    Vue.filter("myFilter",function () {
+        console.log("基本过滤器");
+        return "hello filter";
+    });
+    Vue.filter("myFilter2",function (value) {
+       console.log(value);
+       return "同时使用多个过滤器";
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            date: new Date()
+        },
+        filters: {
+            innerFilter: (str,num) => {
+                num = num.toFixed(2); //四舍五入保留两位小数
+                console.log(str + " 局部过滤器");
+                return num;
+            },
+            dateFilter: (date,pattern="YYYY-MM-DD HH:mm:ss") => {
+                return moment(date).format(pattern);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

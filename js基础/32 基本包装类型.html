@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    * 基本数据类型不能直接调用属性和方法
+    *
+    * 对象可以直接调用属性和方法
+    *
+    * 基本包装类型：是基本数据类型变量，在代码运行过程中使用了属性和方法
+    * 将变量转换为基本包装类型
+    *
+    *
+    *
+    *
+    * */
+</script>
+<script>
+    var flag = new Boolean(false);
+    //var boo = flag && true;     //对象&&true = true
+    var boo = true && flag;       //true&&对象 = 对象 false && 对象 =false
+    console.log(boo);
+
+    var num = 10;   //基本数据类型
+    var number = Number("10"); //基本数据类型
+    var n = new Number("10");   //基本包装类型
+</script>
+</body>
+</html>

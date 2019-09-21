@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //输入年月日，获取这个日期是这一年的第多少天
+    function getDays(year, month, day) {
+        var days = day;
+
+        if (month == 1) {
+            return days;
+        }
+
+        var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        for (var i = 0; i < month - 1; i++) {
+            days += months[i];
+        }
+
+        if (isLeapYear(year) && month > 2) {
+            days++;
+        }
+
+        return days;
+    }
+
+    function isLeapYear(year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+
+    console.log(getDays(2019,8,24));
+
+
+    //求阶乘和
+    function getMulSum(n){
+        var sum = 0;
+        for (var i = 1; i <= n; i++) {
+            var mul = 1;
+            for(var j = 1; j <= i; j++){
+                mul *= j;
+            }
+            sum += mul;
+        }
+        return sum;
+    }
+    console.log(getMulSum(3));
+</script>
+</body>
+</html>

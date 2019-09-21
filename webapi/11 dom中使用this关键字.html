@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<br />
+<img src="images/3.jpg" alt="" />
+
+<input type="button" class="btn" value="未怀孕" />
+<input type="button" class="btn" value="未怀孕" />
+<input type="button" class="btn" value="未怀孕" />
+<input type="button" class="btn" value="未怀孕" />
+<input type="button" class="btn" value="未怀孕" />
+
+<script>
+    //当对象的事件中，使用自身对象可以使用this关键字替代当前对象的名称
+
+    //案例点击按钮修改当前按钮的value属性
+    document.getElementById("btn").onclick = function () {
+        this.type = "text";
+        this.value = "文本输入框";
+        this.id = "txt";
+    }
+
+    //案例点击图片修改自身的宽
+    document.getElementsByTagName("img")[0].onclick = function(){
+        this.width = "100";
+    }
+
+    //案例按钮的排他功能:思维全部复原，在修改当前
+    var btns = document.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].onclick = function () {
+            //全部设置为未怀孕
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].value = "未怀孕";
+            }
+
+            //为当前点击的按钮设置为怀孕--注意不能使用btn[i]
+            this.value = "怀孕了";
+
+        }
+    }
+
+</script>
+</body>
+</html>

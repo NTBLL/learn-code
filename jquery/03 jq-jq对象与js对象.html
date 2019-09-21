@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我是第1</li>
+    <li>我是第2</li>
+    <li>我是第3</li>
+    <li>我是第4</li>
+    <li>我是第5</li>
+    <li>我是第6</li>
+    <li>我是第7</li>
+    <li>我是第8</li>
+    <li>我是第9</li>
+    <li>我是第10</li>
+</ul>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    /*
+    *
+    * jq对象是通过jq方式获取
+    * js对象是通过js方法获取
+    *
+    * js对象不能调用jq对象中方法
+    * jq对象不能调用js对象中方法
+    *
+    * jq对象其实是js对象的一个集合，伪数组，里面含有多个JS对象
+    *
+    * JQ对象转化为JS对象方式：jq对象[索引]，JQ对象.get(索引)
+    * JS对象转化为JQ对象方式：$(JS对象);
+    *
+    * */
+</script>
+<script>
+    var lis = $("ul>li");
+    console.log($===jQuery)
+    for (var i = 0; i < lis.length; i++) {
+        if (i %2 == 0){
+            lis[i].style.backgroundColor = "red";
+        } else{
+            lis[i].style.backgroundColor = "yellow";
+        }
+    }
+</script>
+</body>
+</html>

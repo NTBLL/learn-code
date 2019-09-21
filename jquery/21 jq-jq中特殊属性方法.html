@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="文本设置"/>
+<div>
+    <h1>标题标签</h1>
+</div>
+
+<input type="text" value="洋酒" id="search" style="color:grey;"/>
+
+<script>
+    /*
+    *
+    * val() 方法用于获取和设置表单控件属性值
+    *
+    * text() 方法用于获取和设置标签中的文本内容
+    *
+    * html() 方法用于获取和设置标签中的标签内容
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("#search").focus(function () {
+            if ($(this).val() === "洋酒") {
+                $(this).val("");
+            }
+        }).blur(function () {
+            if (!$(this).val()) {
+                $(this).val("洋酒");
+            }
+        });
+    });
+
+    $("#btn").click(function () {
+        console.log($(this).val());
+        $(this).val("设置div标签内部元素");
+        console.log($("div").html());
+        $("div").html("<p>段落</p>");
+        console.log($("div").text());
+        $("div").text("<p>段落</p>");
+    });
+</script>
+</body>
+</html>

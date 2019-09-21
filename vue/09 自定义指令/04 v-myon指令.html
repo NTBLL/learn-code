@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <a href="http://www.baidu.com" v-myon:click.prevent="fn">{{msg}}</a>
+</div>
+
+
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "百度"
+        },
+        methods: {
+            fn: function () {
+                this.msg = "改变世界改变自己";
+            }
+        },
+        directives: {
+            myon: function (el, binding) {
+                el.addEventListener(binding.arg,function (e) {
+                    binding.value();
+                    if(binding.modifiers.prevent){
+                        e.preventDefault();
+                    }
+
+                },false);
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="添加" id="btn" />
+<div>
+    <span>span</span>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+    <li>li</li>
+</div>
+
+<script>
+    /*
+    *
+    * jq中绑定事件：
+    *   简单事件：
+    *   通过事件类型方法进行绑定如：click()
+    *   通过bind方法进行绑定
+    *   委托事件：
+    *   通过delegate方法进行绑定
+    *
+    *   on方法既可以绑定简单事件也可以绑定委托事件
+    *
+    * 当一个元素绑定简单事件也绑定了委托事件执行顺序为，先执行委托事件在执行简单事件
+    *
+    * 注意委托事件中的this还是执行事件的元素
+    *
+    * 案例：删除案例
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $("li:first").click(function () {
+            alert("first");
+        });
+
+        $("li:last").bind("click",function () {
+            alert("last");
+        });
+
+        $("#btn").click(function () {
+            $("div").append("<li>li</li>");
+        });
+
+        $("div").delegate("span","click",function () {
+           alert("div>span");
+        });
+
+        $("div").on("click",function () {
+            alert("div");
+        });
+
+        $("div").on("click","li",function () {
+           alert("div>li");
+        });
+
+
+    });
+</script>
+</body>
+</html>

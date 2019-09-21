@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 函数是对象，对象不一定是函数
+    * 对象的有__proto__原型，是对象
+    * 函数有prototype原型，是对象
+    *
+    * Math是对象，不是函数
+    *
+    * 函数都是Function构造函数的实例化
+    *
+    *
+    * */
+    var f1 = new Function("num1","num2","return num1+num2");
+    document.write(f1(1,2));
+</script>
+</body>
+</html>

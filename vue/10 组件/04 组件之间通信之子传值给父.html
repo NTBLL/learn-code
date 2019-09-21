@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{msg}}</p>
+    <son @get-msg="getMsg"></son>
+</div>
+
+
+<script>
+    /*
+    *
+    * 子传递值给父组件
+    *   首先父组件定义一个函数
+    *
+    *   在子组件上绑定一个事件，在一个事件处理函数中调用父组件定义的函数
+    *
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    Vue.component("son",{
+        template: `<div><input type="text" v-model="sonMsg" @keyup.enter="send" /></div>`,
+        data: function () {
+            return {sonMsg: ""}
+        },
+        methods: {
+            send: function () {
+                this.$emit("get-msg",this.sonMsg);
+            }
+        }
+
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        methods: {
+            getMsg: function (res) {
+                this.msg = res;
+            }
+        }
+    });
+</script>
+</body>
+</html>

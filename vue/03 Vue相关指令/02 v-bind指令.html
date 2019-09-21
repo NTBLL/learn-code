@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--<h1 title="{{msg}}">我是一个大标题</h1>-->
+    <h1 v-bind:title="msg">我是一个大标题</h1>
+    <h1 :title="msg">我是一个大标题</h1>
+
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.v-bind指令
+    *   属性中无法通过插入表达式获取VUE中data数据
+    *   通过v-bind指令可以完成属性中获取VUE中data数据：v-bind:属性="msg"
+    *   其中v-bind可以省略：:属性="msg"
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        }
+    });
+</script>
+</body>
+</html>

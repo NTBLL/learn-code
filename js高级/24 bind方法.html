@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * bind方法：用于复制一份函数，并修改函数内部的this的指向
+    *
+    * */
+
+    function ShowRandom(){
+        this.number = parseInt(Math.random()*10);
+    }
+
+    ShowRandom.prototype.show = function () {
+      setInterval(function(){
+          console.log(this.number);
+      }.bind(this),1000);
+    };
+
+    new ShowRandom().show();
+</script>
+</body>
+</html>

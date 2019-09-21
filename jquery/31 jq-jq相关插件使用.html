@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style>
+        #jColor {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        #box {
+            height: 2000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .drag-wrapper {
+            width: 400px;
+            margin: 50px auto 0;
+            /*border: 10px solid #000;*/
+        }
+
+        .drag-bar {
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 40px;
+            text-align: center;
+            background-color: #E6E6E6;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            cursor: move;
+        }
+
+        .resize-item {
+            height: 212px;
+            border: 1px solid #e6e6e6;
+        }
+
+        .sort-wrapper {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .sort-item {
+            list-style: none;
+            padding-top: 10px;
+        }
+
+        .sort-item li {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+        .sort-item li:hover {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+<div id="jColor"></div>
+<div class="drag-wrapper">
+    <div class="drag-bar">可拖动、排序、变形的新闻模块</div>
+    <div class="resize-item">
+        <div class="sort-wrapper">
+            <ul class="sort-item">
+                <li>这是第1条新闻!</li>
+                <li>这是第2条新闻!</li>
+                <li>这是第3条新闻!</li>
+                <li>这是第4条新闻!</li>
+                <li>这是第5条新闻!</li>
+                <li>这是第6条新闻!</li>
+                <li>这是第7条新闻!</li>
+                <li>这是第8条新闻!</li>
+                <li>这是第9条新闻!</li>
+                <li>这是第10条新闻!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="box"></div>
+<img class="lazy" data-original="images/demo.gif" alt="">
+
+<script>
+    /*
+    *
+    * jq的颜色相关插件:jquery.color.js
+    *
+    * jq图片懒加载插件:jquery.lazyload.js
+    *
+    * jq的ui插件:jquery-ui.js
+    *
+    *
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#jColor").animate({backgroundColor: "#ffeb3b"}, 2000);
+
+        $(".lazy").lazyload();
+
+        $(".drag-wrapper").draggable({
+            handle:".drag-bar"
+        });
+
+        $(".sort-item").sortable({
+            opacity:0.3
+        });
+
+        $(".resize-item").resizable({
+            handles:"s"
+        });
+    });
+</script>
+</body>
+</html>

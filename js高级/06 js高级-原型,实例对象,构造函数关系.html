@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 构造函数内部有prototype原型对象
+    * prototype原型对象中有constructor属性指向构造函数
+    * 构造函数创建实例对象
+    * 实例对象用有自身属性和__proto__原型对象
+    *
+    *
+    * */
+</script>
+<script>
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Person.prototype.weight = "55KG";
+    // Person.prototype.height = "188CM";
+    // Person.prototype.eat = function () {
+    //   console.log("eat");
+    // };
+
+
+    //这种方式需要手动指定构造器
+    Person.prototype = {
+        constructor: Person,
+        weight: "55KG",
+        height: "188CM",
+        eat: function () {
+            console.log("eat");
+        }
+    }
+    var person = new Person("zs", 18);
+
+    console.dir(Person);
+    console.dir(person);
+
+
+</script>
+</body>
+</html>

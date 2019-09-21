@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<input type="button" id="btn" value="性别">
+<input type="radio" value="1" name="sex"/>男
+<input type="radio" value="2" name="sex" id="r"/>女
+<input type="radio" value="3" name="sex"/>保密
+
+<br/>
+
+<input type="button" id="btn1" value="爱好">
+<input type="checkbox" value="1" name="hobby"/>打豆豆
+<input type="checkbox" value="2" name="hobby" id="c1"/>玩游戏
+<input type="checkbox" value="3" name="hobby" id="c2"/>敲代码
+
+<br />
+
+<input type="button" id="btn2" value="禁用">
+<input type="button" id="btn3" value="注册">
+
+<br />
+
+<input type="button" id="btn4" value="国家">
+<select id="contry">
+    <option value="3" >美国</option>
+    <option value="2">日本</option>
+    <option value="1" id="china">中国</option>
+</select>
+
+<br />
+<textarea name="desc" id="desc" cols="30" rows="10">
+    用户使用指南
+    好好学习
+    天天向上
+    good good learn
+    day day up
+</textarea>
+
+<script>
+    /*
+    *
+    * 当标签中属性名称和属性的取值相同且唯一这时候使用JS的DOM操作可以通过boolean类型来设置值
+    * 如：checked,selected,disabled,readOnly
+    *
+    * */
+
+    //案例点击按钮选择性别和兴趣
+    my$("btn").onclick = function () {
+        my$("r").checked = true;
+    };
+    my$("btn1").onclick = function () {
+        my$("c1").checked = true;
+        my$("c2").checked = false;
+    }
+
+    //按钮禁用
+    my$("btn2").onclick = function(){
+        my$("btn3").disabled = true;
+    }
+
+    //案例选择下拉框和文本域的相关属性设置
+
+    my$("btn4").onclick = function () {
+        my$("china").selected = true;
+    }
+
+    my$("desc").readOnly = true;
+</script>
+</body>
+</html>

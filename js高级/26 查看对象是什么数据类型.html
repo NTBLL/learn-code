@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // function getFun(){
+    //     return Object.prototype.toString();
+    // }
+    // console.log(getFun());
+    function getObjectType(obj){
+        return Object.prototype.toString.call(obj);
+    }
+
+    console.log(getObjectType({}));
+    console.log(getObjectType([]));
+    console.log(getObjectType(new Date()));
+</script>
+</body>
+</html>

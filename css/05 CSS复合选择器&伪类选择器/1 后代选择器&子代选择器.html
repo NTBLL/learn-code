@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--后代选择器：selector1 selector2-->
+    <!--子代选择器：selector1>selector2-->
+    <style>
+        div p{
+            color: pink;
+        }
+        .father>p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>div下的p</p>
+    <p>div下的p</p>
+    <div class="father">
+        <p>div下的div下的p</p>
+        <p>div下的div下的p</p>
+        <p>div下的div下的p</p>
+        <p>div下的div下的p</p>
+    </div>
+    <p>div下的p</p>
+    <p>div下的p</p>
+    <p>div下的p</p>
+    <p>div下的p</p>
+    <p>div下的p</p>
+    <p>div下的p</p>
+</div>
+
+</body>
+</html>

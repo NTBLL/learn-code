@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * window.onload是等待页面所有内容加载完毕后执行
+        * window.onunload是页面关闭后执行 谷歌不支持
+        * window.onbeforeunload是页面关闭前执行 谷歌不支持
+        *
+        * */
+        window.onload = function () {
+            document.getElementById("btn").onclick = function () {
+                alert("load");
+            };
+        };
+
+        window.onunload = function () {
+          alert("xixi");
+        };
+
+        window.onbeforeunload = function () {
+          alert("hahha");
+        };
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+</body>
+</html>

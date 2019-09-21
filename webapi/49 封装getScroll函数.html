@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 补充：||与&&运算符
+    * 多个&&表达式一起运算时，返回第一个表达式运算为false的值，如果所有表达式运算结果都为true，
+    * 则返回最右侧一个表达式运算的值
+    *
+    * 多个"||"表达式一起运算时，返回第一个表达式运算结果为true的值，如果所有表达式运算结果都为false
+    * ，否则返回最右侧的表达式的值。
+    *
+    *
+    *
+    * */
+
+    console.log(true&&true&&1);
+    console.log(0&&true&&false);
+    console.log(2||true||1);
+    console.log(false||false||undefined)
+
+    function getScroll(){
+        return {
+            top : window.pageYOffset || document.documentElement.scrollTop ||
+                    document.body.scrollTop || 0,
+            left : window.pageXOffset || document.documentElement.scrollLeft ||
+                    document.body.scrollLeft || 0
+        };
+    }
+</script>
+</body>
+</html>

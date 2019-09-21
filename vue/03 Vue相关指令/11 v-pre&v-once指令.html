@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-pre>{{msg}}</p>
+    <p v-once>{{msg}}</p>
+    <p>{{msg}}</p>
+</div>
+
+
+<script>
+    /*
+    *
+    * v-pre设置的标签，内部所有内容会跳过vue的解析
+    *
+    * v-once设置的标签，内部只会解析一次，后面数据改变不再进行解析
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        }
+    });
+</script>
+</body>
+</html>

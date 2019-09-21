@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--3D：旋转：rotateX() rotateY()-->
+    <!--透视：perspective 给父元素添加-->
+
+    <!--优雅降级/渐进增强-->
+
+    <!--旋转中，元素没有正对屏幕进行隐藏:backface-visibility:hidden-->
+
+    <!--某些属性需要加入前缀可以使用如：-webkit-,-moz-,等-->
+
+    <style>
+        body{
+            perspective: 500px;
+        }
+        img{
+            transition: all 2s;
+            backface-visibility: hidden;
+        }
+
+        img:nth-child(1):hover{
+            transform: rotateX(360deg);
+        }
+        img:nth-child(2):hover{
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/x.jpg" alt="">
+
+    <img src="images/1498446043198.png" alt="">
+
+</body>
+</html>

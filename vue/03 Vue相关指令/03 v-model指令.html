@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="text" />
+    <p>{{text}}</p>
+    <input type="password" v-model="password" />
+    <p>{{password}}</p>
+    <input type="radio" v-model="radio" />
+    <p>{{radio}}</p>
+    <input type="checkbox" v-model="checkbox" />
+    <p>{{checkbox}}</p>
+    <select v-model="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <p>{{select}}</p>
+</div>
+
+
+<script>
+    /*
+    *
+    * 1.v-model指令
+    *   作用在表单标签上，用于数据的双向绑定
+    *   表单中的value,checked等属性就没有作用了
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            text: "text",
+            password: "password",
+            radio: true,
+            checkbox: false,
+            select: 2
+        }
+    });
+</script>
+</body>
+</html>

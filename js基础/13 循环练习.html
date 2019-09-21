@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //求账号密码是否一致
+    // var userName = prompt("请输入用户名");
+    // var userPwd = prompt("请输入密码");
+    // while(userName != "admin" || userPwd != '123'){
+    //     userName = prompt("请输入用户名");
+    //     userPwd = prompt("请输入密码");
+    // }
+    // console.log("登陆成功！");
+
+
+    //画三角形的五角星
+    // for(var i = 0; i < 5; i++){
+    //     for(var j = 0; j <= i; j++){
+    //         document.write("★");
+    //     }
+    //     document.write("<br />");
+    // }
+
+
+    //乘法表
+    // document.write("<table cellspacing='0' cellpadding='0' border='1'>")
+    // for(var i = 1; i <= 9; i++){
+    //     document.write("<tr>");
+    //     for(var j = 1; j <=i ;j++){
+    //         document.write("<td>"+j+"*"+i+"="+j*i+"</td>")
+    //     }
+    //     document.write("</tr>");
+    // }
+    // document.write("</table>");
+
+    //利润案例
+    // var money = 10000;
+    // var rate = 0.003;
+    // var year = prompt("请输入存放的年数");
+    // for(var i = 0; i < year; i++){
+    //     money = (1+rate)*money;
+    // }
+    // console.log(money);
+
+
+    //1 1 2 3 5 7  f(n) = f(n-1) + f(n-2)
+    var sum = 0;
+    var front;
+    var before;
+    for(var i = 0; i < 12 ; i++){
+        if(i == 0){
+            front = 0;
+            before = 0;
+            sum = 1;
+        }
+        if(i == 1){
+            front = 0;
+            before = 1;
+            sum = before + front;
+        }
+        if(i > 1){
+            front = before;
+            before = sum;
+            sum = front + before;
+        }
+
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

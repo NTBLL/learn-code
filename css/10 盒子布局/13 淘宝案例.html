@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .slider{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .left,.right{
+            width: 24px;
+            height: 36px;
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+        li {list-style: none;}
+        .slider ul{
+            width: 70px;
+            height: 13px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            background-color: rgba(255,255,255,.3);
+            border-radius: 5px;
+        }
+        .slider ul li{
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            float: left;
+            border-radius: 50%;
+            margin: 2px 3px;
+        }
+        .slider .current{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img src="../images/taobao.jpg" alt="">
+        <img src="../images/left.png" alt="" class="left">
+        <img src="../images/right.png" class="right" alt="">
+        <ul>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            position: absolute;
+            background-color: skyblue;
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="动画"/>
+<div id="box"></div>
+
+<script src="js/common.js"></script>
+<script>
+    //获取任意元素的任意样式属性值
+    console.log(my$("box").offsetLeft);
+    console.log(getElementStyle(my$("box"), "left"));
+
+    function getElementStyle(element, attr) {
+        //  IE8 || 谷歌 火狐
+        return element.currentStyle ? element.currentStyle[attr] : window.getComputedStyle(element, null)[attr];
+    }
+
+    my$("btn").onclick = function () {
+
+        //animate(my$("box"), "height", 400);
+        //animate(my$("box"), {height: 400, width: 400, left: 400, top: 400})
+        // animate(my$("box"), {height: 400, width: 400, left: 400, top: 400},
+        //     function () {
+        //         animate(my$("box"), {height: 100, width: 100, left: 100, top: 100});
+        //     });
+        animate(my$("box"), {height: 400, width: 400, left: 400, top: 400},
+            function () {
+                animate(my$("box"), {height: 100, width: 100, left: 0, top: 0, zIndex: 1000, opacity: .2});
+            });
+
+    };
+
+
+    //封装变速动画函数可以传入任意任意属性值
+    function animate(element, attr, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = parseInt(getElementStyle(element, attr));
+            var step = Math.ceil(Math.abs(current - target) / 10);
+            step = current - target < 0 ? step : -step;
+            element.style[attr] = current + step + "px";
+            if (current == target) {
+                clearInterval(element.timeId);
+            }
+
+        }, 20);
+    }
+
+
+    //封装变速动画函数可以传入多个任意属性值
+    function animate(element, attrs) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            //用于判断是否所有的属性到达目标
+            var flag = true;
+            for (var attr in attrs) {
+                var current = parseInt(getElementStyle(element, attr));
+                var target = attrs[attr];
+                var step = Math.ceil(Math.abs(current - target) / 10);
+                step = current - target < 0 ? step : -step;
+                element.style[attr] = current + step + "px";
+                if (current != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(element.timeId);
+            }
+        }, 20);
+    }
+
+    //封装动画函数之回调函数
+    function animate(element, attrs, fn) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            //用于判断是否所有的属性到达目标
+            var flag = true;
+            for (var attr in attrs) {
+                var current = parseInt(getElementStyle(element, attr));
+                var target = attrs[attr];
+                var step = Math.ceil(Math.abs(current - target) / 10);
+                step = current - target < 0 ? step : -step;
+                element.style[attr] = current + step + "px";
+                if (current != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(element.timeId);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 20);
+    }
+
+    //封装动画函数之添加透明度和层叠属性
+    function animate(element, attrs, fn) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            //用于判断是否所有的属性到达目标
+            var flag = true;
+            for (var attr in attrs) {
+                if (attr == "zIndex") {
+                    element.style[attr] = attrs[attr];
+                } else if (attr == "opacity") {
+                    var current = getElementStyle(element, attr) * 100;
+                    var target = attrs[attr] * 100;
+                    var step = Math.ceil(Math.abs(current - target) / 10);
+                    step = current - target < 0 ? step : -step;
+                    element.style[attr] = (current + step) / 100;
+
+                } else {
+                    var current = parseInt(getElementStyle(element, attr));
+                    var target = attrs[attr];
+                    var step = Math.ceil(Math.abs(current - target) / 10);
+                    step = current - target < 0 ? step : -step;
+                    element.style[attr] = current + step + "px";
+
+                }
+                if (current != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(element.timeId);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 20);
+    }
+
+</script>
+</body>
+</html>

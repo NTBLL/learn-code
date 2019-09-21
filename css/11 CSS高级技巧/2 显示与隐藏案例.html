@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .vidao{
+            width: 448px;
+            height: 252px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .vidao:hover{
+            cursor: pointer;
+        }
+        .mask{
+            width: 448px;
+            height: 252px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,.3) url("../images/arr.png") no-repeat center;
+            display: none;
+        }
+        .vidao:hover .mask{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="vidao">
+        <img src="../images/tudou.jpg" alt="" >
+        <div class="mask"></div>
+    </div>
+
+</body>
+</html>

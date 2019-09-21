@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="隔行变色" id="btn"/>
+<ul style="list-style-type: none;" id="hy">
+    <li>鸣人</li>
+    <li>佐助</li>
+    <li>小樱</li>
+    <li>卡卡西</li>
+    <li>自来也</li>
+    <li>大蛇丸</li>
+</ul>
+<script src="js/common.js"></script>
+<script>
+    my$("btn").onclick = function () {
+        var lis = my$("hy").getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundColor = i % 2 == 0 ? "red" : "yellow";
+        }
+    }
+
+</script>
+</body>
+</html>

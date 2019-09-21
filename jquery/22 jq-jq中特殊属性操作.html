@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div {*/
+            /*width: 100px;*/
+            /*border: 1px solid black;*/
+            /*height: 100px;*/
+            /*padding: 10px;*/
+            /*margin: 20px;*/
+        /*}*/
+
+
+
+        #father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: relative;
+        }
+
+        #son {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="father">
+    <div id="son"></div>
+</div>
+
+<div></div>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+
+<script>
+    /*
+    *
+    * width() 用于获取元素的宽  //不包含边框
+    * height() 用于获取元素的高 //不包含边框
+    *
+    * innerWidth() 获取元素 width+padding
+    * outerWidth([true]) 获取元素 width+padding+border[+margin]
+    *
+    * scrollLeft() 获取左边卷出的宽度
+    * scrollTop() 获取上边卷出的宽度
+    *
+    * offset() 获取元素的left,top值，相对document
+    * position() 获取元素的left,top值，相对与父元素
+    *
+    *
+    * */
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        // console.log($("div").width());
+        // console.log($("div").height());
+        // console.log($("div").innerWidth());
+        // console.log($("div").outerWidth());
+        // console.log($("div").outerWidth(true));
+        //
+        // $(window).scroll(function () {
+        //     console.log($(this).scrollTop());
+        // });
+
+        console.log($("#son").offset());
+        console.log($("#son").position());
+
+    });
+</script>
+</body>
+</html>

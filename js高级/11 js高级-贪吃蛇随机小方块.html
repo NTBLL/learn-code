@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 600px;
+            background-color: grey;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="map"></div>
+
+<script>
+    //随机数
+    (function (window) {
+
+        //创建随机数构造函数
+        function Random() {
+        }
+
+        //创建随机数产生方法[min,max)
+        Random.prototype.getRandom = function (min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        };
+
+        window.random = new Random();
+
+    })(window);
+
+    //食物
+    (function (window) {
+
+        //地图
+        var map = document.querySelector(".map");
+
+        //食物对象
+        function Food(width, height, color) {
+            this.width = width || 20;
+            this.height = height || 20;
+            this.color = color;
+            this.x = 0;
+            this.y = 0;
+            this.element = document.createElement("div");
+        }
+
+        //食物初始化方法
+        Food.prototype.init = function () {
+            //随机位置
+            var x = random.getRandom(0,map.offsetWidth/this.width)*this.width;
+            var y = random.getRandom(0,map.offsetHeight/this.height)*this.height;
+
+            console.log(x,y);
+
+            //设置食物的样式
+            var div = this.element;
+            div.style.width = this.width + "px";
+            div.style.height = this.height + "px";
+            div.style.position = "absolute";
+            div.style.left = x + "px";
+            div.style.top = y + "px";
+            div.style.backgroundColor = this.color;
+
+            //将食物放到地图中
+            map.appendChild(div);
+
+        };
+
+        window.Food = Food;
+
+    })(window);
+
+    //测试
+    var food = new Food(20,20,"red");
+    food.init();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function run(){
+            console.log("跑步");
+        }
+        //var run = xx;
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+            this.eat = function () {
+              console.log("吃饭")  ;
+            };
+            this.run = run;
+        }
+        Person.prototype.sleep = function () {
+          console.log("睡觉");
+        };
+        var p1 = new Person("zhangsan",18);
+        var p2 = new Person("lisi",15);
+        console.log(p1.eat == p2.eat);
+        console.log(p1.run == p2.run);
+        console.log(p1.sleep == p2.sleep);
+        console.dir(p1);
+    </script>
+    <script>
+        /*
+        *
+        * 构造函数中的缺点：多个对象用于相同的数据，会导致浪费空间
+        *   解决方法一：不推荐，，将共同的数据提到构造函数外，属性指向变量名即可
+        *   解决方法二：通过原型方式---数据共享，节约空间
+        *
+        * */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

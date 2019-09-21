@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+
+<script src="js/common.js"></script>
+<script>
+    var img = document.createElement("img");
+    img.src = "images/tianshi.gif";
+    document.body.appendChild(img);
+
+    document.onmousemove = function (e) {
+        e = window.event || e;
+        img.style.position = "absolute";
+        // img.style.left = e.clientX + "px";
+        // img.style.top = e.clientY + "px";
+
+        //IE8不支持
+        img.style.left = e.pageX + "px";
+        img.style.top = e.pageY + "px";
+    };
+</script>
+</body>
+</html>

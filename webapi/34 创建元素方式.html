@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="box"></div>
+
+<script src="js/common.js"></script>
+<script>
+    //通过document.write方式        页面加载完毕后会清除原来页面内容    可以嵌入外部代码
+    //document.write("<p>段落标签</p>");
+    // my$("btn").onclick = function () {
+    //     document.write("<p>段落标签</p>");
+    // };
+
+    //通过innerHTML方式     每一次点击都会创建并覆盖原有内容
+    // my$("btn").onclick = function () {
+    //   my$("box").innerHTML = "<p>段落标签</p>";
+    // };
+
+    //通过document.createElement方式
+
+    my$("btn").onclick = function () {
+        var pObj = document.createElement("p");
+        setTextContent(pObj, "段落标签内容");
+        my$("box").appendChild(pObj);
+    };
+</script>
+</body>
+</html>

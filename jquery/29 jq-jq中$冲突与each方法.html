@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+            float:left;
+            width: 90px;
+            height: 100px;
+            background-color: pink;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+<script>
+    /*
+    *
+    * each：用于遍历jq对象中的js对象，可以使用循环替代
+    *
+    * 当jq与其他的JS框架或库中$冲突时，jq可以放弃$
+    * var new$ = $.noConflit()
+    * new$具有$的所有功能
+    *
+    *
+    * */
+</script>
+<script src="js/myjs.js"></script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    console.log($);
+    var new$ = $.noConflict();
+    console.log($);
+    console.log(new$ === jQuery);
+
+    new$("li").each(function(index,element){
+        new$(element).css("opacity",(1+index)/10);
+    });
+</script>
+</body>
+</html>

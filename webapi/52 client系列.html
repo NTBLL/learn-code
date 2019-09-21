@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            border: 20px solid pink;
+        }
+    </style>
+</head>
+<body>
+<div style="position: absolute;top: 20px;"><div id="box"></div></div>
+
+<script src="js/common.js"></script>
+<script>
+    /*
+    *
+    *
+    * clientLeft：获取元素的左边框距离
+    * clientTop：获取元素的上边框距离
+    * clientWidth：获取元素内容的宽度
+    * clientHeight：获取元素内容的高度
+    *
+    *
+    * */
+</script>
+<script>
+    console.log(my$("box").clientWidth);
+    console.log(my$("box").clientLeft);
+    console.log(my$("box").clientHeight);
+    console.log(my$("box").clientTop);
+    console.log(my$("box").offsetParent);
+</script>
+
+</body>
+</html>

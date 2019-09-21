@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    function ajax(method,url,params,done) {
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        method = method.toUpperCase();
+        if (typeof params === "object"){
+            var array = [];
+            for(var key in params){
+                array.push(key + "=" + params[key]);
+            }
+            params = array.join("&");
+        }
+
+        if (method === "GET"){
+            url = url + "?" + params;
+        }
+        xhr.open(method, url);
+        var postparams = null;
+        if (method === "POST"){
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            postparams = params;
+        }
+        xhr.send(postparams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState !== 4) return;
+            done(this.responseText);
+        };
+    }
+    ajax("GET","hello",{name:"zhangsan "},function (data) {
+        console.log(data);
+    });
+    ajax("POST","data",{name:"zhangsan"},function (data) {
+       console.log(data);
+    });
+
+
+    // var xhr = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+    // xhr.open("GET","hello");
+    // xhr.send(null);
+    // xhr.onreadystatechange = function () {
+    //   if (this.readyState !== 4) return;
+    //   console.log(this.responseText);
+    // };
+</script>
+</body>
+</html>

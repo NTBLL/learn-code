@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--优先级：不同的选择器具有不同的权重-->
+    <!--id:0 1 0 0-->
+    <!--class/伪类:0 0 1 0-->
+    <!--tag: 0 0 0 1-->
+    <!--继承/通配符：0 0 0 0  通配符>继承 -->
+    <!--!important：∞   给继承无效-->
+    <!--权重可以进行叠加-->
+
+    <style>
+        #xy{
+            color: skyblue;
+        }
+        .yx{
+            color: hotpink;
+        }
+        p{
+            color: orange;
+        }
+        *{
+            color: grey!important;
+        }
+        div{
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="yx" id="xy">赢了笑嘻嘻，输了MMP</p>
+    </div>
+</body>
+</html>

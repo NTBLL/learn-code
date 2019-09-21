@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 正则表达式：也叫规则表达式
+        * 通过一些规则组成的表达式
+        * 作用：匹配字符串
+        *
+        * 组成：元字符和限定符
+        * 元字符：.,|,[],(),+,?,*,{},^,$
+        * \d,\D,\w,\W,\s,\S,\b
+        *
+        * 正则表达式中：g 表示全局 i表达忽略大小写
+        *
+        *
+        * 创建正则表达式对象方式
+        *   字面量
+        *   构造函数
+        *
+        *
+        * 字符串中与正则表达式相关的方法
+        * match,replace
+        *
+        * 正则表达式对象中的方法
+        * exec
+        * test
+        *
+        *
+        *
+        *
+        * */
+    </script>
+    <script>
+        //一般通过/正则/,也可以通过字符串方式写正则表达式
+        var reg01 = new RegExp(/\d+/);
+        var reg02 = /\d+/;
+        console.log(reg02.test("中华人们1"));
+
+        var str = "中国移动：10086,中国联通：10010,中国电信：10000";
+        // var array = str.match(/\d+/g);
+        // array.forEach(function(e){
+        //    console.log(e);
+        // });
+
+        var str1 = "HhpphH";
+        console.log(str1.replace(/([h])/ig, "S"));
+
+        var str2 = "2019-09-03";
+        var day = str2.match(/(\d+)-(\d+)-(\d+)/g)
+        console.log(RegExp.$3);
+
+        var reg = /\d{5}/g;
+        var array = reg.exec(str);
+        console.log(array);
+        array = reg.exec(str);
+        console.log(array);
+        // while(array != null){
+        //     console.log(array);
+        //     array = (/\d+/g).exec(str);
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

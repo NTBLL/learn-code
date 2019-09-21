@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .container {
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <brand-form @add-brand="add" @search="search"></brand-form>
+    <brand-table :list="searchList" @del="del"></brand-table>
+</div>
+
+
+<script src="../vue.js"></script>
+<script src="../moment.js"></script>
+<script>
+    var brand_form = {
+        template: `
+        <form class="form-inline">
+        <div class="form-group">
+            <label for="exampleInputName2">品牌</label>
+            <input type="text" class="form-control" id="exampleInputName2" v-model="brand">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail2">描述</label>
+            <input type="email" class="form-control" @keyup.enter="add" id="exampleInputEmail2" v-model="des">
+        </div>
+        <button type="submit" class="btn btn-info" @click.prevent="add">添加</button>
+        <div class="form-group" style="margin-left: 50px">
+            <label for="exampleInputEmail3">查询</label>
+            <input type="email" class="form-control" @keyup="search" id="exampleInputEmail3" v-model="key">
+        </div>
+    </form>`,
+        data(){
+            return {brand:"",des:"",key:""}
+        },
+        methods: {
+            add: function () {
+                this.$emit("add-brand",this.brand,this.des);
+                this.brand = "";
+                this.des = "";
+            },
+            search: function () {
+                this.$emit("search",this.key);
+            }
+        }
+
+    };
+    var brand_table = {
+        template: `
+      <table class="table table-bordered table-striped" style="margin-top: 20px;">
+        <tr>
+            <th>序号</th>
+            <th>品牌</th>
+            <th>描述</th>
+            <th>日期</th>
+            <th>操作</th>
+        </tr>
+        <tr v-if="list.length == 0">
+            <td colspan="5">没有更多的信息了</td>
+        </tr>
+        <tr v-for="(item,index) in list" :key="item.id" :class="index%2==0?'info':'warning'">
+            <td>{{index+1}}</td>
+            <td>{{item.brand}}</td>
+            <td>{{item.des}}</td>
+            <td>{{item.date | dateFilter}}</td>
+            <td><a href="#" @click.prevent="remove(item.id)">删除</a></td>
+        </tr>
+    </table>`,
+        props: ["list"],
+        methods: {
+            remove: function (id) {
+                this.$emit("del",id);
+            }
+        },
+        filters: {
+            dateFilter: function (date, pattern="YYYY-MM-DD HH:mm:ss") {
+                return moment(date).format(pattern);
+            }
+        }
+    };
+
+    Vue.component("brand-form",brand_form);
+    Vue.component("brand-table",brand_table);
+
+    const vm = new Vue({
+        el: ".container",
+        data: {
+            list: [
+                {id: 1, brand: "宝马", des: "宝马不是你想买就买", date: new Date()},
+                {id: 2, brand: "大本", des: "大本不是你想买就买", date: new Date()},
+                {id: 3, brand: "老爷车", des: "老爷车不是你想买就买", date: new Date()}
+            ],
+            index: 4,
+            brand: "",
+            key:""
+        },
+        methods: {
+            del: function (id) {
+                this.list.findIndex((item,index) => {
+                    if(item.id == id){
+                        this.list.splice(index,1);
+                    }
+                })
+            },
+            add: function (brand,desc) {
+                var obj = {id:this.index++,brand:brand,des:desc,date:new Date()};
+                this.list.push(obj);
+            },
+            search: function (key) {
+                this.key = key;
+            }
+        },
+        computed: {
+            searchList: function () {
+                return this.list.filter((item) => {
+                    return item.brand.includes(this.key);
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

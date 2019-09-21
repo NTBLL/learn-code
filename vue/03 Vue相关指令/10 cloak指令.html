@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <p v-cloak>{{msg}}</p>
+</div>
+
+
+<script>
+    /*
+    *
+    *
+    * v-cloak指令，，用于解决闪烁效果
+    * 后期使用单文件组件，不会产生闪烁效果，，便不怎么使用
+    *
+    * 使用：
+    * v-cloak
+    * 配置CSS样式[v-cloak]{display:none;}
+    *
+    *
+    *
+    * */
+</script>
+<script src="..\vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "呵呵"
+        }
+    });
+</script>
+</body>
+</html>

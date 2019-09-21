@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: #DB192A;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen"><!--相框-->
+        <ul>
+            <li><img src="images/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+    <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script src="../js/common.js"></script>
+<script>
+    //box
+    var box = my$("box");
+    //box>screen>ul
+    var ulObj = my$("box").children[0].children[0];
+    //box>screen>ul>li
+    var lis = ulObj.getElementsByTagName("li");
+    //imgWidth
+    var imgWidth = my$("box").children[0].offsetWidth;
+    //box>screen>ol
+    var olObj = my$("box").children[0].children[1];
+    //box>arr
+    var arr = my$("box").children[1];
+    //box>arr>left/right
+    var left = my$("left");
+    var right = my$("right");
+
+    //自动轮播
+    var index = 0;
+    var timeId = setInterval(autoPlay,1000);
+
+
+    //小方块方式轮播图
+    for (var i = 0; i < lis.length; i++) {
+        //创建小方块
+        var list = document.createElement("li");
+        setTextContent(list, i + 1);
+        olObj.appendChild(list);
+
+        //为小方块设置定位属性
+        list.setAttribute("imgIndex", i);
+
+        //设置第一个默认选中状态
+        if (i == 0) {
+            list.className = "current";
+        }
+
+        //小方块鼠标移入滑动图片和添加背景色
+        list.onmouseover = function () {
+            //获取创建的list
+            var listItem = olObj.getElementsByTagName("li");
+            //背景色
+            for (var j = 0; j < listItem.length; j++) {
+                listItem[j].removeAttribute("class");
+            }
+            this.className = "current";
+
+            //滑倒对应的图片
+            animate(ulObj, -this.getAttribute("imgIndex") * imgWidth);
+        };
+    }
+
+
+    //copy第一个图片元素到最后，为了实现无缝轮播
+    ulObj.appendChild(lis[0].cloneNode(true));
+
+    //左右焦点实现轮播图
+    box.onmouseover = function () {
+        arr.style.display = "block";
+        clearInterval(timeId);
+    };
+    box.onmouseout = function () {
+        arr.style.display = "none";
+        timeId = setInterval(autoPlay,1000);
+    };
+
+    //右边焦点
+
+    right.onclick = autoPlay;
+
+    //左边焦点
+    left.onclick = function () {
+        if (index == 0) {
+            ulObj.style.left = -imgWidth * (lis.length ) + "px";
+            index = lis.length - 1;
+        }
+        index--;
+        animate(ulObj, -imgWidth * index);
+        var listItem = olObj.getElementsByTagName("li");
+        for (var i = 0; i < listItem.length; i++) {
+            listItem[i].removeAttribute("class");
+        }
+        listItem[index].className = "current";
+    };
+
+    function autoPlay() {
+        if (index == lis.length - 1) {
+            ulObj.style.left = "0";
+            index = 0;
+        }
+        index++;
+        animate(ulObj, -imgWidth * index);
+        var listItem = olObj.getElementsByTagName("li");
+        for (var i = 0; i < listItem.length; i++) {
+            listItem[i].removeAttribute("class");
+        }
+        listItem[index == lis.length - 1 ? 0 : index].className = "current";
+    };
+
+
+
+
+    //设置任意的一个元素,移动到指定的目标位置
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        //定时器的id值存储到对象的一个属性中
+        element.timeId = setInterval(function () {
+            //获取元素的当前的位置,数字类型
+            var current = element.offsetLeft;
+            //每次移动的距离
+            var step = 10;
+            step = current < target ? step : -step;
+            //当前移动到位置
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                //清理定时器
+                clearInterval(element.timeId);
+                //直接到达目标
+                element.style.left = target + "px";
+            }
+        }, 10);
+    }
+</script>
+
+
+</body>
+</html>

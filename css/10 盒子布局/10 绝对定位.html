@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--绝对定位：absolute-->
+    <!--绝对定位是根据父元素是否设置定位来根据其左上角定位-->
+    <!--绝对定位的盒子不占有原来位置-->
+
+    <style>
+        body{
+            height: 2000px;
+            width: 100%;
+            margin: 0;
+        }
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="son"></div>
+</body>
+</html>

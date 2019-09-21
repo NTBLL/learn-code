@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * axios可以单独使用
+    * GET请求 {url,params,method}
+    * POST请求 {url,data,method}
+    * GET请求与POST请求不同处在与参数的属性名称不同
+    *
+    *
+    * */
+</script>
+<script src="../axios.js"></script>
+<script>
+    //GET请求
+    axios({
+        url: "https://www.apiopen.top/findStatistics",
+        method: "GET",
+        params: {
+            appKey: "00d91e8e0cca2b76f515926a36db68f5"
+        }
+    }).then(function(res){
+        console.log(res);
+    }).catch(function (err) {
+        console.log(err);
+    })
+
+    //POST
+    axios({
+        url: "https://www.apiopen.top/findStatistics",
+        method: "POST",
+        data: {
+            appKey: "00d91e8e0cca2b76f515926a36db68f5"
+        }
+    }).then(function(res){
+        console.log(res);
+    }).catch(function (err) {
+        console.log(err);
+    })
+</script>
+</body>
+</html>

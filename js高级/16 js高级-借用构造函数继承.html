@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //通过改变原型对象的同时继承，需要立即进行初始化，创建对象的属性值都一样
+        //解决方式：通过借用构造函数进行继承
+    </script>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.height = 50;
+        Person.prototype.eat = function () {
+            console.log("eat");
+        };
+
+        function Student(name,age,score) {
+            //借用Person构造函数进行继承
+            Person.call(this,name,age);
+            this.score = score;
+        }
+
+        var student = new Student("zs",18,80);
+        console.log(student.name,student.age,student.score);
+        console.log(student);
+        console.log(student.height);
+        student.eat();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

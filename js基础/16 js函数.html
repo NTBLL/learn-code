@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *
+    *
+    * 1.函数：将一些重复的代码封装，在需要的时候调用即可
+    *
+    * 2.函数作用：减少代码的重复
+    *
+    * 3.函数定义：funtion 函数名(){函数体}
+    *
+    * 4.函数调用：函数名();
+    *
+    * 5.函数定义时注意事项：函数名要使用小驼峰，函数名不能重复，函数要先定义后使用
+    *
+    * 6.函数参数
+    *   函数名后的小括号内的变量是函数参数
+    *   实参和形参：函数定义时为形参，函数使用传入的参数为实参
+    *
+    * 7.函数返回值
+    *   函数体内部使用return关键字，return后面的表达式为函数返回值
+    *
+    *
+    * 8.参数和返回值注意思想
+    *   实参和形参可以不一致
+    *   函数体没有返回值，而接收则为undefined;函数体没只写return;返回undefined且结束方法
+    *
+    *
+    *
+    * */
+</script>
+
+<script>
+    //求两个数字的和
+    function getTwoNumberSum(n, m) {
+        return n + m;
+    }
+
+    console.log(getTwoNumberSum(10, 20));
+
+    //求1-100之间所有的数字的和
+    function getOneToHundredSum() {
+        var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(getOneToHundredSum());
+
+    //求1-n之间所有数的和
+    function getOneToNSum(n) {
+        var sum = 0;
+        for (var i = 0; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(getOneToNSum(1000));
+
+    //求n-m之间所有数的和
+    function getNTOMSum(n, m) {
+        var sum = 0;
+        for (let i = n; i <= m; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(getNTOMSum(1, 50))
+    console.log(getNTOMSum(50, 100));
+
+    //圆的面积
+    function getCircularArea(r) {
+        return Math.PI * r * r;
+    }
+
+    console.log(getCircularArea(10));
+
+    //求两个数中的最大值
+    function getTwoNumberMax(n, m) {
+        return n > m ? n : m;
+    }
+
+    console.log(getTwoNumberMax(52, 25));
+
+    //求3个数中的最大值
+    function getTreeNumberMax(n, m, p) {
+        return n > m ? (n > p ? n : p) : (m > p ? m : p);
+    }
+
+    console.log(getTreeNumberMax(25, 52, 66));
+
+    //判断一个数是否是素数
+    function isPrime(n) {
+        for (let i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    console.log(isPrime(2));
+</script>
+</body>
+</html>

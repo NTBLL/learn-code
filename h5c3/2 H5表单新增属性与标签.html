@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--input list  datalist id>option-->
+    <!--type:number,tel,email,search,date,time,datetime..-->
+    <!--attribute:autofoucs,placeholder,accesskey,required,multiple-->
+    <style>
+        legend{text-align: center;}
+        dl,dd,dt{
+            margin: 0;
+            padding: 0;
+        }
+        dl{
+            overflow: hidden;
+        }
+        dt,dd{
+            float: left;
+        }
+        dt{
+            width: 75px;
+        }
+        dd{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" list="search" >
+<datalist id="search">
+    <option value="中华">中华</option>
+    <option value="中华">中华</option>
+    <option value="中华">中华</option>
+    <option value="中华">中华</option>
+    <option value="23中华">23中华</option>
+    <option value="321中华">321中华</option>
+
+</datalist>
+    <fieldset>
+        <legend>用户信息</legend>
+        <dl>
+            <dt>邮箱</dt>
+            <dd><input type="email" autofocus placeholder="请填写邮箱" required></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>数字</dt>
+            <dd><input type="number" accesskey="s"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>电话</dt>
+            <dd><input type="tel"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>搜索</dt>
+            <dd><input type="search"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>拖拽</dt>
+            <dd><input type="range"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>时分</dt>
+            <dd><input type="time"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>年月日</dt>
+            <dd><input type="date"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>年月日时分秒</dt>
+            <dd><input type="datetime"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>月份</dt>
+            <dd><input type="month"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>星期</dt>
+            <dd><input type="week"></dd>
+            <dd>*必填选项</dd>
+        </dl>
+        <dl>
+            <dt>文件上传</dt>
+            <dd><input type="file" multiple></dd>
+            <dd>*必填选项</dd>
+        </dl>
+    </fieldset>
+</body>
+</html>

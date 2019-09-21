@@ -1,0 +1,232 @@
+/*首页CSS*/
+.main{
+    height: 480px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.main .inner{
+    height: 480px;
+    width: 1190px;
+    position: absolute;
+    z-index: 999999;
+    left: 50%;;
+    margin-left: -595px;
+}
+.main .ad{
+    position: absolute;
+    width: 100%;
+    height: 480px;
+    top: 0;
+    left: 0;
+    background: url("../images/ad.webp") no-repeat top center;
+}
+.main .cols1{
+    width: 190px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    float: left;
+    height: 480px;
+}
+
+.main .cols2{
+    width: 590px;
+    float: left;
+    height: 480px;
+    float: left;
+    position: relative;
+}
+
+.main .cols3{
+    width: 190px;
+    margin: 0 10px;
+    height: 480px;
+    float: left;
+}
+
+.main .cols4{
+    width: 190px;
+    height: 480px;
+    float: left;
+}
+
+.main .cols1 ul{
+    width: 190px;
+    height: 450px;
+    padding: 15px 0;
+}
+
+.main .cols1 li{
+    width: 172px;
+    height: 25px;
+    padding: 0 0 0 18px;
+}
+
+.main .cols1 li:hover{
+    background-color: #d9d9d9;
+
+}
+
+.main .cols1 a{
+    font-size: 14px;
+    color: #333333;
+}
+.main .cols1 a:hover{
+    color: #F10215;
+}
+
+.main .cols2 .images{
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+
+.images img{
+    vertical-align: middle;
+    border: 0;
+    height: 480px;
+}
+
+.main .arr{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main .arr a{
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    display: block;
+    width: 25px;
+    height: 35px;
+    background: rgba(0,0,0,.2);
+    text-align: center;
+    line-height: 35px;
+    color: #dddddd;
+}
+
+.arr .left{
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.arr .right{
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.cols2 ul{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    width: 113px;
+    height: 15px;
+    border-radius: 10px;
+    color: #666666;
+    background-color: #fff;
+}
+
+.cols2 ul li{
+    float: left;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.4);
+    margin: 3px 3px;
+}
+
+.cols2 .current{
+    background: #F10215;
+}
+
+.cols3>div{
+    width: 190px;
+    height: 150px;
+}
+
+.cols3 img{
+    width: 190px;
+    height: 150px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.cols3>div:hover{
+    cursor: pointer;
+}
+
+
+.cols3 .center{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.cols4 .user{
+    width: 190px;
+    height: 110px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.cols4 .news{
+    width: 190px;
+    height: 130px;
+    background-color: orange;
+}
+
+.cols4 .tab{
+    width: 190px;
+    height: 240px;
+    background-color: green;
+}
+
+.user .top{
+    width: 150px;
+    overflow: hidden;
+    margin: 25px auto 0;
+}
+
+.user .top img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    /*margin: 20px 20px 0 10px;*/
+}
+.user .top p{
+    font-size: 12px;
+    color: #666666;
+    float: left;
+    margin: 3px 6px;
+    cursor: pointer;
+}
+
+.user .bottom{
+    width: 150px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.user .bottom a{
+    float: left;
+    width: 70px;
+    height: 25px;
+    background-color: #E1251B;
+    text-align: center;
+    color: #ffffff;
+    line-height: 25px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 15px;
+}
+
+.news h3{
+    height: 20px;
+    margin: 0;
+}
+
+
