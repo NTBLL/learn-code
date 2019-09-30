@@ -1,0 +1,12 @@
+div{
+    width: 50%;
+    margin: 0 auto;
+    height: 100px;
+    float: left;
+}
+div:first-child{
+    background-color: pink;
+}
+div:last-child{
+    background-color: orange;
+}

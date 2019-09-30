@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+    <style>
+        canvas{
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="500"></canvas>
+
+
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    var space = 20;
+    var arrowSize = 10;
+
+    context.beginPath();
+    context.moveTo(space,context.canvas.height - space - 0.5);
+    context.lineTo(context.canvas.width - space,context.canvas.height - space - 0.5);
+    context.strokeStyle = "#000";
+    context.stroke();
+    context.beginPath();
+    context.moveTo(context.canvas.width - space,context.canvas.height - space - 0.5);
+    context.lineTo(context.canvas.width - space - arrowSize,context.canvas.height - space - 0.5 - arrowSize/2)
+    context.lineTo(context.canvas.width - space - arrowSize,context.canvas.height - space - 0.5 + arrowSize/2)
+    context.strokeStyle = "#000";
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(space - 0.5,context.canvas.height - space);
+    context.lineTo(space - 0.5,space);
+    context.strokeStyle = "#000";
+    context.stroke();
+    context.beginPath();
+    context.moveTo(space - 0.5,space);
+    context.lineTo(space - 0.5 + arrowSize/2,space + arrowSize);
+    context.lineTo(space - 0.5 - arrowSize/2,space + arrowSize)
+    context.strokeStyle = "#000";
+    context.fill();
+
+
+    //网格大小
+    var grid = 10;
+
+    var xLineTotal = Math.floor(context.canvas.height / grid);
+    for (var i = 0; i <= xLineTotal; i++) {
+        context.beginPath();
+        context.moveTo(0,i*grid);
+        context.lineTo(context.canvas.width,i*grid);
+        context.strokeStyle = "#999";
+        context.stroke();
+    }
+
+    var yLineTotal = Math.floor(context.canvas.width / grid);
+    for (var i = 0; i <= yLineTotal; i++) {
+        context.beginPath();
+        context.moveTo(i*grid,0);
+        context.lineTo(i*grid,context.canvas.height);
+        context.strokeStyle = "#999";
+        context.stroke();
+    }
+</script>
+</body>
+</html>

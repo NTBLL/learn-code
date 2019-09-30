@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                 maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            width: 1366px;
+        }
+        ul li{
+            float: left;
+            width: 170.75px;
+            height: 50px;
+            background: green;
+        }
+
+        @media screen and (max-width: 750px) {
+            ul{
+                width: 750px;
+            }
+            ul li{
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+    <li>导航栏</li>
+</ul>
+
+<script>
+    /*
+    *
+    * 响应式布局的原理
+    *   响应式布局通过媒体查询，在不同的设备宽度下进行排版和样式的设置
+    *   将设备的宽度设置为四个等级
+    *   x<768
+    *   678<=x<992
+    *   992<=x<1200
+    *   >=1200
+    *
+    * 响应式布局容器
+    *   响应式布局需要一个父容器，从而配合子元素实现变化效果
+    *
+    *   父容器在四个等级下的宽度设置
+    *   100%
+    *   750px
+    *   970px
+    *   1170px
+    *
+    * */
+</script>
+</body>
+</html>

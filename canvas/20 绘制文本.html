@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    /*
+    *
+    * canvas提供绘制文本的API：
+    *   //绘制文本
+    *   strokeText(text,x,y)    fillText(text,x,y)
+    *   //设置文本大小和字体
+    *   font
+    *   //设置文本水平对齐方式
+    *   textAlign
+    *   //设置文本垂直对齐方式
+    *   textBaseLine
+    *   //获取文本的宽度
+    *   measureText.width
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    context.moveTo(context.canvas.width/2 - 0.5,0);
+    context.lineTo(context.canvas.width/2 - 0.5, context.canvas.height);
+    context.moveTo(0,context.canvas.height/2 - 0.5);
+    context.lineTo(context.canvas.width,context.canvas.height/2 - 0.5);
+    context.stroke();
+
+    context.beginPath();
+    console.log(context.measureText("Hello World!").width);
+    context.font = "24px Microsoft YaHei";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    //context.strokeText("Hello World!",context.canvas.width/2,context.canvas.height/2 - 0.5);
+    context.fillText("Hello World!",context.canvas.width/2,context.canvas.height/2);
+    console.log(context.measureText("Hello World!").width);
+
+</script>
+</body>
+</html>

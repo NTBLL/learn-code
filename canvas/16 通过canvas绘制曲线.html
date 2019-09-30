@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    /*
+    *
+    * canvas提供了arc方法用来画圆
+    *   arc(x0,y0,r,start,end,顺逆时针)
+    *   x0,y0中性点坐标
+    *   r半径
+    *   start,end 开始和结束的圆弧度数
+    *   false默认顺时针，true逆时针---》默认从右边0->Π/2...
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    var x0 = context.canvas.width / 2;
+    var y0 = context.canvas.height / 2;
+    // context.arc(x0,y0,150,0,Math.PI/2);
+    context.arc(x0,y0,150,0,Math.PI/2,true);
+    context.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        canvas{
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="500"></canvas>
+
+<script>
+    /*
+    *
+    * 非零环绕填充规则：
+    *   将要填充的区域，随意拉出一条线，经过的线穿过的绘制线，若为顺时针+1,逆时针-1
+    *   总和不为零，则该区域填充，否则就不填充
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    context.moveTo(100,100);
+    context.lineTo(400,100);
+    context.lineTo(400,400);
+    context.lineTo(100,400);
+    context.lineTo(100,100);
+
+    context.moveTo(200,200);
+    context.lineTo(200,300);
+    context.lineTo(300,300);
+    context.lineTo(300,200);
+    context.lineTo(200,200);
+
+    context.stroke();
+    context.fill();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    /*
+    *
+    * 以下方法都是对坐标进行转换
+    *   移动：translate(x,y)
+    *   缩放：scale(x,y)
+    *   旋转：rotate(N*PI)---是按照画布原点进行旋转
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    // context.strokeRect(100,100,100,100);
+    // context.translate(100,100); //将横纵坐标偏移了100
+    // context.fillRect(100,100,100,100);
+
+    // context.strokeRect(100,100,100,100);
+    // context.scale(0.5,0.5); //横纵坐标都缩小一半
+    // context.fillRect(100,100,100,100);
+
+    context.translate(canvas.width / 2, canvas.height / 2);
+    setInterval(function () {
+        context.rotate(Math.PI / 180);
+        context.strokeRect(-50, - 25, 100, 50);
+    }, 100)
+</script>
+</body>
+</html>

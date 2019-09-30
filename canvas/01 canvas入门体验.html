@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+    <style>
+        canvas{
+            border: 1px solid #999999;
+            margin: 0 auto;
+        }
+        /*div{*/
+            /*width: 300px;*/
+            /*margin: 0 auto;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--<div>-->
+    <!--<canvas></canvas>-->
+<!--</div>-->
+
+<canvas width="600" height="300"></canvas>
+<script>
+    /*
+    *
+    * canvas是H5的一部分，具有兼容性问题，且通过shav5插件的使用也不能
+    *
+    * 使用canvas画一条直线
+    *   在页面结构创建canvas标签
+    *   并通过width,height设置画布大小，默认为300*150,不要使用CSS设置，这样会使得内部图像会被拉伸
+    *   通过画布，获取上下文对象
+    *   通过上下文对象，设置画笔位置
+    *   设置要画线的终点位置
+    *   将线描绘出来
+    *
+    * 会出现BUG情况，因为线会以中心坐标进行对齐导致线会被
+    * 会分为两个0.5px，导致线条被拉伸,解决方法将其对应的横总坐标-0.5px即可
+    *
+    * 绘制3D技术--web lg
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+    context.moveTo(200,100 - 0.5);
+    context.lineTo(400,100 - 0.5);
+    context.stroke();
+</script>
+</body>
+</html>

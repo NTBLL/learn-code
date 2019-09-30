@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+    <style>
+        canvas{
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="500"></canvas>
+
+<script>
+    /*
+    *
+    * 填充方法：fill
+    * 也可以进行颜色设置fillStyle = value
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    context.moveTo(100,200);
+    context.lineTo(200,200);
+    context.lineTo(150,100);
+    // context.lineTo(100,200);
+    // context.fillStyle = `red`;
+    // context.fill();
+
+    //会导致缺失情况，这时候可以通过自动闭合即可解决
+    context.closePath();
+    context.lineWidth = 10;
+    context.stroke();
+
+
+</script>
+</body>
+</html>

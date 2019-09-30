@@ -1,0 +1,30 @@
+// 定义变量以及变量的使用
+@color: red;
+@num1: 10px;
+@num2: 20px;
+div,
+span {
+  background-color: @color;
+}
+
+//嵌套
+.father {
+  font-size: 24px;
+  .son {
+    color: @color;
+  }
+  &:hover{
+    line-height: 24px;
+  }
+  &::after{
+    content: "";
+  }
+}
+
+// 计算
+.compute {
+  font-size: @num1 + @num2;
+  color: #666 - #444;
+  width: 100px - 50;
+  height: 100em - 50px;
+}

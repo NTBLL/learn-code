@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+    <style>
+        canvas{
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="500"></canvas>
+
+<script>
+    /*
+    *
+    * 将线设置为虚线：setDashLine([value...])
+    * 单个值表示：实线和空白的长度
+    * 多个值表示：实现，空白，实现，空白的。。。。长度
+    *
+    * 获取虚线：getLineDash(),获取的是有规律的实现，空白的大小
+    *
+    * 虚线偏移：lineDashOffset
+    *
+    *
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    context.moveTo(0,200);
+    context.setLineDash([5,10]);
+    context.lineDashOffset = 20;
+    context.lineTo(300,200);
+    context.stroke();
+
+
+    console.log(context.getLineDash());
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    /*
+    *
+    * 曲线可以看成是一个个点按照特定的数学公式描绘出来的线
+    *   如：y = 2x y = x / 2 y = (x - 2)^2  y = sin(x)...
+    *
+    *
+    *
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    for (var i = 0; i < context.canvas.width; i++) {
+        var x = i;
+        // var y = 2*x;
+        // var y = x / 2;
+        // var y = Math.pow(x - 300,2);
+        var y = 100*Math.sin(x/10) + 150;
+        context.lineTo(x - 0.5,y - 0.5);
+    }
+    context.stroke();
+</script>
+</body>
+</html>

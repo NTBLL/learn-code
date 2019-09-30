@@ -1,0 +1,23 @@
+div,
+span {
+  background-color: red;
+}
+.father {
+  font-size: 24px;
+}
+.father .son {
+  color: red;
+}
+.father:hover {
+  line-height: 24px;
+}
+.father::after {
+  content: "";
+}
+.compute {
+  font-size: 30px;
+  color: #222222;
+  width: 50px;
+  height: 50em;
+}
+/*# sourceMappingURL=test.css.map */

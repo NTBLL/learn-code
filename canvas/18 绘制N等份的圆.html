@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    var num = 6;
+    var angel = Math.PI / 3;
+    var x0 = context.canvas.width / 2;
+    var y0 = context.canvas.height / 2;
+    var r = 150;
+
+    for (var i = 0; i < 6; i++) {
+        var startAngel = angel * i;
+        var endAngel = angel * i + angel;
+        context.beginPath();
+        context.moveTo(x0,y0);
+        context.arc(x0, y0, r, startAngel, endAngel);
+        context.closePath();
+        context.fillStyle = getRandomColor();
+        context.fill();
+    }
+
+    function getRandomColor() {
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+        return `rgb(${r},${g},${b})`;
+    };
+</script>
+</body>
+</html>

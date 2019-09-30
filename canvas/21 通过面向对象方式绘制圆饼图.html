@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script src="canvas.js"></script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var data = [
+        {title: "18-20岁", count: 18},
+        {title: "21-25岁", count: 30},
+        {title: "26-30岁", count: 48},
+        {title: "30-35岁", count: 10},
+        {title: "35岁以上", count: 14}
+    ];
+
+    //测试
+    new CircleCharts(document.querySelector("canvas")).init(data);
+</script>
+</body>
+</html>

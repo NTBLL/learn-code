@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+<canvas width="600" height="400" style="border: 1px solid #999999"></canvas>
+
+<script>
+    /*
+    *
+    * 图片的加载：
+    *   创建image对象，通过src加载资源
+    *   图片加载事件onload,该事件要定义在请求资源前，否则资源加载过快不会执行onload事件
+    *
+    *
+    * canvas提供绘制图片的方法
+    *   drawImage(img,x,y)  x,y是画布中的坐标
+    *   drawImage(img,x,y,w,h) w,h是图片在画布中的大小
+    *   drawImage(img,x1,y1,w1,h1,x2,y2,w2,h2)
+    *       前一组x1,y1表示图片的坐标，w1,h1是图片截取的大小
+    *       后一组x2,y2表示图片在画布的坐标，w2,h2是图片在画布中的大小
+    *
+    * */
+</script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+
+    var img = new Image();
+    img.onload = function () {
+        // console.log(img);
+        // context.drawImage(img,10,10);
+        // context.drawImage(img,100,100,50,50);
+
+        context.drawImage(img,400,400,100,100,200,200,200,200);
+    };
+    img.src = "images/02.jpg"
+</script>
+</body>
+</html>

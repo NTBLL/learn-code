@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*>=0*/
+        @media screen and (min-width: 0){
+            body{
+                background-color: red;
+            }
+        }
+
+        /*>=640*/
+        @media screen and (min-width: 640px){
+            body{
+                background-color: green;
+            }
+        }
+
+        /*>=900*/
+        @media screen and (min-width: 900px){
+            body{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    /*
+    *
+    * 媒体查询是C3的新语法
+    *
+    * 可以根据设备的分辨不同设置不同的样式
+    *
+    * 基本语法：@media mediatype and|only|not (meidafeature){csscode;}
+    * @media 表示声明媒体查询
+    * meidatype 表示设备类型：取值有all,print,screen
+    * and|only|not 关键字 用于连接媒体特性 and 表示并且的关系 only 表示只有这一个 not 表示排除该特性
+    * meidafeature 取值有width max-width min-width
+    *
+    * 书写顺序建议使用从小到大进行，通过CSS层叠性来简化代码
+    *
+    * 为了实现不同的分辨率调用不同的样式文件的语法如下
+    * <link rel href media="mediatype and|only|not (meidafeature)" />
+    *
+    *
+    * */
+</script>
+</body>
+</html>
