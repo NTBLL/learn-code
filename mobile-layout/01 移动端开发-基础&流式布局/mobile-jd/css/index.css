@@ -1,0 +1,117 @@
+body{
+    width: 100%;
+    height: 2000px;
+    background-color: #cccccc;
+    min-width: 320px;
+    max-width: 667px;
+    margin: 0 auto;
+    font: 14px -apple-system,Helvetica,sans-serif;
+}
+
+/*搜索模块*/
+.search{
+    min-width: 320px;
+    max-width: 667px;
+    height: 44px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    line-height: 44px;
+}
+.search .search-btn{
+    width: 10%;
+    float: left;
+    height: 44px;
+}
+.search .search-btn img{
+    height: 22px;
+    vertical-align: middle;
+}
+.search .search-input{
+    width: 80%;
+    height: 30px;
+    margin: 7px 0;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+}
+.search  .search-input .logo{
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    width: 40px;
+    height: 20px;
+
+}
+.search .logo img{
+    width: 20px;
+}
+.search .search-input::after{
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 6px;
+    width: 1px;
+    height: 18px;
+    background-color: #cccccc;
+}
+.search .searchico{
+    width: 18px;
+    height: 15px;
+    background: url("../images/jd-sprites.png") no-repeat -81px 0;
+    background-size: 200px;
+    position: absolute;
+    top: 8px;
+    left: 48px;
+}
+.search input{
+    position: absolute;
+    top: 8px;
+    left: 75px;
+    border: 0;
+    font-size: 12px;
+    outline: none;
+}
+.search .login{
+    width: 10%;
+    float: left;
+    height: 44px;
+    color: #FFF;
+}
+
+/*轮播图模块*/
+.slider{
+
+    width: 100%;
+    margin-top: 44px;
+
+    overflow: hidden;
+    text-align: center;
+}
+.slider img{
+    width: 96%;
+    border-radius: 5px;
+}
+
+/*导航栏模块*/
+nav{
+    width: 100%;
+}
+nav a{
+    float: left;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+nav a img{
+    width: 40px;
+}
+nav a p{
+    margin-top: 3px;
+    font-size: 12px;
+
+}

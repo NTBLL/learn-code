@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button @click="$router.push('home')">home</button>
+    <button @click="$router.push('/friend')">firend</button>
+    <router-view></router-view>
+</div>
+
+
+<script>
+    /*
+    *
+    * vue-router路由使用
+    *   路由入口：可以通过路由标签，也可以通过路由方法：vm.$router.push
+    *
+    *   配置路由的时候可以添加一个name属性，便于使用
+    *
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script src="../vue-router.js"></script>
+<script>
+    var home = {
+        template: "<h1>home</h1>"
+    };
+    var friend = {
+        template: "<h1>friend</h1>"
+    };
+    var router = new VueRouter({
+        routes: [
+            {path:"/",redirect:"/home"},
+            {path:"/home",name:"home",component:home},
+            {path:"/friend",name:"friend",component: friend}
+        ]
+    });
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容"
+        },
+        router
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../animate.css">
+    <style>
+        .v-enter,.v-leave-to{
+            opacity: 0;
+        }
+        .v-enter-to,.v-leave{
+            opacity: 1;
+        }
+        .v-enter-active,.v-leave-active{
+            transition: all 2s;
+        }
+        .an1-enter,.an1-leave-to{
+            opacity: 0;
+        }
+        .an1-enter-to,.an1-leave{
+            opacity: 1;
+        }
+        .an1-enter-active,.an1-leave-active{
+            transition: all 4s;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <button @click="show">显示</button>
+    <button @click="hidden">隐藏</button>
+    <h1>单个动画</h1>
+    <transition>
+        <div v-show="isBlock">单个动画</div>
+    </transition>
+    <h1>多个动画</h1>
+    <transition name="an1">
+        <div v-show="isBlock">多个动画</div>
+    </transition>
+    <h1>使用第三方动画</h1>
+    <transition enter-active-class="animated bounceInDown"
+        leave-active-class="animated bounceOutUp">
+        <div v-show="isBlock">多个动画</div>
+    </transition>
+</div>
+
+<script>
+    /*
+    *
+    * vue提供了简单动画，复杂动画不建议直接使用vue中的，而是通过第三方库实现
+    *   要配合v-if/v-show使用
+    *   VUE过渡：
+    *   单个动画
+    *   给要进行动画的元素使用transition标签包裹起来，并配置v-enter,v-enter-to,v-enter-active
+    *   v-leave,v-leave-to,v-leave-active六个类样式，者六个样式会自动添加到要执行动画的元素中
+    *
+    *   多个动画
+    *   每一个动画通过transition标签包裹起来，并给transtion设置name属性，在配置name-enter等六个
+    *   类样式即可
+    *
+    *   使用第三方动画库
+    *   引入第三方库，并通过transtion中的enter-active-class,leave-active-class引用即可
+    *
+    * */
+</script>
+<script src="../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "内容",
+            isBlock: false
+        },
+        methods: {
+            show: function () {
+                this.isBlock = true;
+            },
+            hidden: function () {
+                this.isBlock = false;
+            }
+        }
+    });
+</script>
+</body>
+</html>
