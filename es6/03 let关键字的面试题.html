@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+
+<script>
+    // var arr = new Array(5);
+    // for (var i = 0; i < arr.length; i++) {
+    //     arr[i] = function () {
+    //         console.log(i);     //i是全局变量所以打印的全是5
+    //     };
+    // }
+    // for (var j = 0; j < arr.length; j++) {
+    //     arr[j]();
+    // }
+
+    var arr = new Array(5);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = function () {
+            console.log(i);         //i是块级作用域所以打印的是0，1，2，3，4
+        };
+    }
+    for (let j = 0; j < arr.length; j++) {
+        arr[j]();
+    }
+</script>
+</body>
+</html>

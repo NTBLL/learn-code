@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 若传入的实参个数不确定，有不能使用arguments对象
+    *   则可以通过剩余参数方式进行接收,相当于一个数组
+    *   语法：(...args)
+    *
+    *   可以配合解构赋值使用
+    *
+    * */
+</script>
+<script>
+    // const fn = (info,...other) => {
+    //     console.log(info,other);
+    // };
+    // fn(`剩余参数`,1,2,3,4,5,6);
+
+    let [a, ...b] = [1, 2, 3, 4, 5, 6, 7];
+    console.log(a, b);
+</script>
+</body>
+</html>

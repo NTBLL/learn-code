@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TITLE</title>
+
+</head>
+<body>
+
+<script>
+    /*
+    *
+    * 将伪数组转换为真数组
+    *   Array.from()
+    * 查找指定条件的数组项
+    *   arr.find((item,i) => {})
+    * 查找指定元素的下标
+    *   arr.findIndex(item => {})
+    * 判断数组是否有该元素
+    *   arr.includes(value)
+    *
+    *
+    * */
+</script>
+<script>
+    let p1 = {id: 1, name: `zs`};
+    let p2 = {id: 2, name: `ls`};
+    let obj = {
+        "0": p1,
+        "1": p2,
+        length: 2
+    };
+
+    // console.log(obj);
+    // console.log(Array.from(obj));
+
+    let arr = Array.from(obj);
+
+    // console.log(arr.find(item => item.id == 3));
+
+    // console.log(arr.findIndex(item => item.id == 2));
+
+    console.log(arr.includes({id: 2, name: `ls`}));
+
+</script>
+</body>
+</html>
