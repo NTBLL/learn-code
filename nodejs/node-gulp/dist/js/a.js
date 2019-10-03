@@ -1,0 +1,1 @@
+"use strict";for(var thisA=10,i=0;i<10;i++)console.log(i);console.log(thisA);var fn=function(i){return i};fn("年起极端");
