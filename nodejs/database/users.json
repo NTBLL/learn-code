@@ -1,0 +1,32 @@
+[
+  {
+    "name": "张三",
+    "age": 18,
+    "password": "lxy123456",
+    "hobbies": ["洗澡","吃饭"]
+  },
+  {
+    "name": "李四",
+    "age": 26,
+    "password": "lxy123456",
+    "hobbies": ["洗澡","吃饭","打游戏"]
+  },
+  {
+    "name": "王五",
+    "age": 22,
+    "password": "lxy123456",
+    "hobbies": ["打豆豆"]
+  },
+  {
+    "name": "王二麻子",
+    "age": 24,
+    "password": "lxy123456",
+    "hobbies": ["跑步"]
+  },
+  {
+    "name": "小强",
+    "age": 33,
+    "password": "lxy123456",
+    "hobbies": ["敲代码"]
+  }
+]
